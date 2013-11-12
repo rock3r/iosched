@@ -14,7 +14,7 @@
   limitations under the License.
   -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">Droidcon London 2013</string>
+    <string name="app_name">Droidcon NL</string>
 
     <string name="description_search">Search</string>
     <string name="description_refresh">Refresh</string>
@@ -59,9 +59,9 @@
     <string name="all_tracks_sessions">All sessions</string>
     <string name="all_tracks_office_hours">All office hours</string>
     <string name="all_tracks_sandbox">All companies</string>
-    <string name="all_tracks_subtitle_sessions">All sessions at Droidcon London 2013.</string>
-    <string name="all_tracks_subtitle_office_hours">All office hours at Droidcon London 2013.</string>
-    <string name="all_tracks_subtitle_sandbox">All developer sandbox companies at Droidcon London 2013.</string>
+    <string name="all_tracks_subtitle_sessions">All sessions at Droidcon Amsterdam 2013.</string>
+    <string name="all_tracks_subtitle_office_hours">All office hours at Droidcon Amsterdam 2013.</string>
+    <string name="all_tracks_subtitle_sandbox">All developer sandbox companies at Droidcon Amsterdam 2013.</string>
     <string name="other_tracks">Other tracks</string>
 
     <string name="empty_sessions">No sessions found.</string>
@@ -86,7 +86,7 @@
 
     <string name="codelab_title_template">Code Lab: <xliff:g id="title">%1$s</xliff:g></string>
 
-    <string name="search_label">Droidcon London Sessions</string>
+    <string name="search_label">Droidcon Amsterdam Sessions</string>
     <string name="search_hint">Search sessions</string>
 
     <string name="share_template">Checking out \'<xliff:g id="title">%1$s</xliff:g>\' at <xliff:g id="hashtags">%2$s</xliff:g> <xliff:g id="url">%3$s</xliff:g></string>
@@ -98,18 +98,18 @@
     <string name="remove_from_schedule_desc">Remove from schedule</string>
 
     <!-- Announcements -->
-    <string name="whats_on_countdown_title_0"><xliff:g id="remaining_time">%1$s</xliff:g>\nuntil Droidcon London</string>
+    <string name="whats_on_countdown_title_0"><xliff:g id="remaining_time">%1$s</xliff:g>\nuntil Droidcon Amsterdam</string>
     <plurals name="whats_on_countdown_title">
-        <item quantity="one"><xliff:g id="number_of_days">%1$s</xliff:g> day, <xliff:g id="remaining_time">%2$s</xliff:g>\nuntil Droidcon London</item>
-        <item quantity="other"><xliff:g id="number_of_days">%1$s</xliff:g> days, <xliff:g id="remaining_time">%2$s</xliff:g>\nuntil Droidcon London</item>
+        <item quantity="one"><xliff:g id="number_of_days">%1$s</xliff:g> day, <xliff:g id="remaining_time">%2$s</xliff:g>\nuntil Droidcon Amsterdam</item>
+        <item quantity="other"><xliff:g id="number_of_days">%1$s</xliff:g> days, <xliff:g id="remaining_time">%2$s</xliff:g>\nuntil Droidcon Amsterdam</item>
     </plurals>
     <string name="whats_on_thank_you_short">Thanks!</string>
     <string name="whats_on_thank_you_title">See you next year!</string>
-    <string name="whats_on_thank_you_subtitle">Droidcon London 2013 has ended.</string>
+    <string name="whats_on_thank_you_subtitle">Droidcon Amsterdam 2013 has ended.</string>
     <string name="news_will_appear_here">Announcements will appear here</string>
-    <string name="welcome_to_google_i_o">Welcome to Droidcon London!</string>
+    <string name="welcome_to_google_i_o">Welcome to Droidcon Amsterdam!</string>
 
-    <string name="permission_write">Modify Droidcon London schedule data</string>
+    <string name="permission_write">Modify Droidcon Amsterdam schedule data</string>
 
     <plurals name="toast_added_to_schedule">
         <item quantity="one">Session added to your schedule</item>
@@ -147,7 +147,7 @@
     <string name="about_eula">End User License Agreement</string>
     <string name="about_licenses">Open Source Licenses</string>
     <string name="about_body"><![CDATA[
-        <b>Droidcon London 2013</b><br>
+        <b>Droidcon Amsterdam 2013</b><br>
         Version %s<br/>
         (Based on iosched 2013)
     ]]></string>
@@ -241,7 +241,7 @@
 
     <!-- More Misc -->
     <string name="dashclock_extension_description">
-        Displays the next few items in your Droidcon London 2013 schedule.
+        Displays the next few items in your Droidcon Amsterdam 2013 schedule.
     </string>
     <string name="stream_retweets">%d RT</string>
 </resources>
