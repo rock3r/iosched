@@ -16,6 +16,8 @@ import java.util.List;
  */
 public class TrackResponse extends ServerResponse {
 
+    private static final String DEFAULT_COLOUR = "#336699";
+
     private String description;
 
     private String iconUrl;
@@ -102,7 +104,21 @@ public class TrackResponse extends ServerResponse {
     }
 
     public void setColour(String colour) {
-        this.colour = colour;
+        if(colour == null) {
+            this.colour = DEFAULT_COLOUR;
+            return;
+        }
+        colour = colour.trim();
+        if(colour.startsWith("#")) {
+            this.colour = colour;
+            return;
+        }
+        try {
+            long value = Long.parseLong(colour, 16);
+            this.colour = "#"+colour;
+        } catch (NumberFormatException e) {
+            this.colour = colour;
+        }
     }
 
     @Override
