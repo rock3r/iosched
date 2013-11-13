@@ -16,7 +16,7 @@
 
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.funkyandroid.droidcon.uk.iosched"
+    package="com.conferenceengineer.android.iosched"
     android:versionCode="201317"
     android:versionName="2013.17"
     android:installLocation="auto">
@@ -26,7 +26,7 @@
         android:targetSdkVersion="18" />
 
     <permission
-        android:name="com.funkyandroid.droidcon.uk.iosched.permission.WRITE_SCHEDULE"
+        android:name="com.conferenceengineer.android.iosched.permission.WRITE_SCHEDULE"
         android:protectionLevel="normal"
         android:label="@string/permission_write"
         android:description="@string/permission_write" />
@@ -50,7 +50,7 @@
     <uses-permission
             android:name="com.google.android.c2dm.permission.RECEIVE" />
     <permission
-            android:name="com.funkyandroid.droidcon.uk.iosched.permission.C2D_MESSAGE"
+            android:name="com.conferenceengineer.android.iosched.permission.C2D_MESSAGE"
             android:protectionLevel="signature" />
     <uses-permission
             android:name="com.funkyandroid.droidcon.uk.iosched.permission.C2D_MESSAGE" />
@@ -329,7 +329,7 @@
 
         <provider
             android:name=".provider.ScheduleProvider"
-            android:authorities="com.funkyandroid.droidcon.uk.iosched"
+            android:authorities="com.conferenceengineer.android.iosched"
             android:writePermission="com.funkyandroid.droidcon.uk.iosched.permission.WRITE_SCHEDULE"
             android:syncable="true"
             android:label="@string/app_name"

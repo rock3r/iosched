@@ -40,7 +40,7 @@
 
     </RelativeLayout>
 
-    <com.funkyandroid.droidcon.uk.iosched.ui.widget.ObservableScrollView
+    <com.conferenceengineer.android.iosched.ui.widget.ObservableScrollView
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -113,6 +113,6 @@
                 android:visibility="gone" />
 
         </LinearLayout>
-    </com.funkyandroid.droidcon.uk.iosched.ui.widget.ObservableScrollView>
+    </com.conferenceengineer.android.iosched.ui.widget.ObservableScrollView>
 
 </LinearLayout>

@@ -79,7 +79,7 @@
 -dontwarn android.support.**
 
 # Keep ServerResponse objects so they can 
--keepclassmembers class * extends com.funkyandroid.droidcon.uk.droidconsched.io.ServerResponse {
+-keepclassmembers class * extends com.conferenceengineer.android.iosched.io.ServerResponse {
   public <init>();
   public void set*(%);
   public void set*(**);
@@ -91,7 +91,7 @@
   public ** get*();
 }
 
--keepclassmembers class * extends com.funkyandroid.droidcon.uk.droidconsched.io.ServerRequest {
+-keepclassmembers class * extends com.conferenceengineer.android.iosched.io.ServerRequest {
   public % get*();
   public ** get*();
 }
