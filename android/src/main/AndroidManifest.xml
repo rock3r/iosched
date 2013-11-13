@@ -17,8 +17,8 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.conferenceengineer.android.iosched.conference348"
-    android:versionCode="201317"
-    android:versionName="2013.17"
+    android:versionCode="201318"
+    android:versionName="2013.18"
     android:installLocation="auto">
 
     <uses-sdk
@@ -33,8 +33,6 @@
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
