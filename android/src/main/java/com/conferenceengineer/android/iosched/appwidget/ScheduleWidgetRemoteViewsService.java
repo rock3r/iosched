@@ -16,6 +16,7 @@
 
 package com.conferenceengineer.android.iosched.appwidget;
 
+import com.conferenceengineer.android.iosched.Config;
 import com.conferenceengineer.android.iosched.R;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract;
 import com.conferenceengineer.android.iosched.ui.HomeActivity;
@@ -171,7 +172,7 @@ public class ScheduleWidgetRemoteViewsService extends RemoteViewsService {
 
                         // Determine if the session is in the past
                         long currentTimeMillis = UIUtils.getCurrentTime(mContext);
-                        boolean conferenceEnded = currentTimeMillis > UIUtils.CONFERENCE_END_MILLIS;
+                        boolean conferenceEnded = currentTimeMillis > Config.CONFERENCE_END_MILLIS;
                         boolean blockEnded = currentTimeMillis > blockEnd;
                         if (blockEnded && !conferenceEnded) {
                             starredSessionSubtitle = mContext.getString(R.string.session_finished);
@@ -222,7 +223,7 @@ public class ScheduleWidgetRemoteViewsService extends RemoteViewsService {
                 } else if (ScheduleContract.Blocks.BLOCK_TYPE_KEYNOTE.equals(type)) {
                     long currentTimeMillis = UIUtils.getCurrentTime(mContext);
                     boolean past = (currentTimeMillis > blockEnd
-                            && currentTimeMillis < UIUtils.CONFERENCE_END_MILLIS);
+                            && currentTimeMillis < Config.CONFERENCE_END_MILLIS);
                     boolean present = !past && (currentTimeMillis >= blockStart);
                     boolean canViewStream = present && UIUtils.hasHoneycomb();
 

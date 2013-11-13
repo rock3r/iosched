@@ -16,12 +16,24 @@
 
 package com.conferenceengineer.android.iosched;
 
+import com.conferenceengineer.android.iosched.util.ParserUtils;
+
+import java.util.TimeZone;
+
 public class Config {
     // Log tag
     public static final String LOG_TAG = "DCNL2013";
 
     // General configuration
     public static final int CONFERENCE_YEAR = 2013;
+
+    // Conference times
+    public static final TimeZone CONFERENCE_TIME_ZONE = TimeZone.getTimeZone("Europe/Amsterdam");
+
+    public static final long CONFERENCE_START_MILLIS = ParserUtils.parseTime(
+            "2013-11-25T08:30:00.000+01:00");
+    public static final long CONFERENCE_END_MILLIS = ParserUtils.parseTime(
+            "2013-11-26T16:15:00.000+01:00");
 
     // OAuth 2.0 related config
     public static final String APP_NAME = "DroidconNL2013-Android";

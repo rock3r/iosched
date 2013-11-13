@@ -16,6 +16,7 @@
 
 package com.conferenceengineer.android.iosched.ui;
 
+import com.conferenceengineer.android.iosched.Config;
 import com.conferenceengineer.android.iosched.R;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract.Announcements;
 import com.conferenceengineer.android.iosched.util.TimeUtils;
@@ -84,9 +85,9 @@ public class WhatsOnFragment extends Fragment implements
         final long currentTimeMillis = UIUtils.getCurrentTime(getActivity());
 
         // Show Loading... and load the view corresponding to the current state
-        if (currentTimeMillis < UIUtils.CONFERENCE_START_MILLIS) {
+        if (currentTimeMillis < Config.CONFERENCE_START_MILLIS) {
             setupBefore();
-        } else if (currentTimeMillis > UIUtils.CONFERENCE_END_MILLIS) {
+        } else if (currentTimeMillis > Config.CONFERENCE_END_MILLIS) {
             setupAfter();
         } else {
             setupDuring();
@@ -121,7 +122,7 @@ public class WhatsOnFragment extends Fragment implements
     private Runnable mCountdownRunnable = new Runnable() {
         public void run() {
             int remainingSec = (int) Math.max(0,
-                    (UIUtils.CONFERENCE_START_MILLIS - UIUtils
+                    (Config.CONFERENCE_START_MILLIS - UIUtils
                             .getCurrentTime(getActivity())) / 1000);
             final boolean conferenceStarted = remainingSec == 0;
 

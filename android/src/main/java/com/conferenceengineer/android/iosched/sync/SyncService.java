@@ -98,23 +98,23 @@ public class SyncService extends IntentService {
         long now = nowCalendar.getTimeInMillis();
 
         // No auto-sync once the conference is over
-        if(now > UIUtils.CONFERENCE_END_MILLIS) {
+        if(now > Config.CONFERENCE_END_MILLIS) {
             return;
         }
 
         long syncInterval;
-        if(now < UIUtils.CONFERENCE_START_MILLIS - 48*60*60*1000) {
+        if(now < Config.CONFERENCE_START_MILLIS - 48*60*60*1000) {
             // More than two days ahead; Sync once per day
             syncInterval = 24*60*60*1000;
-        } else if ( now < UIUtils.CONFERENCE_START_MILLIS ) {
+        } else if ( now < Config.CONFERENCE_START_MILLIS ) {
             // If we're in the last 2 days before the conference
             // step the sync up to twice per day.
-            syncInterval = Math.min(12*60*60*1000, UIUtils.CONFERENCE_START_MILLIS - now);
+            syncInterval = Math.min(12*60*60*1000, Config.CONFERENCE_START_MILLIS - now);
         } else {
             // During the conference sync every 30 mins between 7am and 7pm in the Timezone of the conference,
             // and outside of that don't sync.
             Calendar syncTimeCalendar = Calendar.getInstance();
-            syncTimeCalendar.setTimeZone(UIUtils.CONFERENCE_TIME_ZONE);
+            syncTimeCalendar.setTimeZone(Config.CONFERENCE_TIME_ZONE);
             if(nowCalendar.get(Calendar.HOUR_OF_DAY) < 7 ) {
                 // before 7am set the next sync to 7am that day
                 syncTimeCalendar.set(Calendar.HOUR_OF_DAY, 7);

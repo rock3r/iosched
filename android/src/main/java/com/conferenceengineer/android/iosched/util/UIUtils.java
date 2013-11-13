@@ -70,19 +70,6 @@ import static com.conferenceengineer.android.iosched.util.LogUtils.makeLogTag;
 public class UIUtils {
     private static final String TAG = makeLogTag(UIUtils.class);
 
-    /**
-     * Time zone to use when formatting all session times. To always use the
-     * phone local time, use {@link TimeZone#getDefault()}.
-     */
-    public static final TimeZone CONFERENCE_TIME_ZONE = TimeZone.getTimeZone("Europe/Amsterdam");
-
-    public static final long CONFERENCE_START_MILLIS = ParserUtils.parseTime(
-            "2013-11-25T08:30:00.000+01:00");
-    public static final long CONFERENCE_END_MILLIS = ParserUtils.parseTime(
-            "2013-11-26T16:15:00.000+01:00");
-
-    public static final String CONFERENCE_HASHTAG = "#droidconNL";
-
     public static final String TARGET_FORM_FACTOR_ACTIVITY_METADATA =
             "com.conferenceengineer.android.iosched.meta.TARGET_FORM_FACTOR";
 
@@ -125,7 +112,7 @@ public class UIUtils {
 
     /**
      * Format and return the given {@link Blocks} and {@link Rooms} values using
-     * {@link #CONFERENCE_TIME_ZONE}.
+     * Config.CONFERENCE_TIME_ZONE.
      */
     public static String formatSessionSubtitle(String sessionTitle,
             long blockStart, long blockEnd, String roomName, StringBuilder recycle,
@@ -133,7 +120,7 @@ public class UIUtils {
 
         // Determine if the session is in the past
         long currentTimeMillis = UIUtils.getCurrentTime(context);
-        boolean conferenceEnded = currentTimeMillis > UIUtils.CONFERENCE_END_MILLIS;
+        boolean conferenceEnded = currentTimeMillis > Config.CONFERENCE_END_MILLIS;
         boolean blockEnded = currentTimeMillis > blockEnd;
         if (blockEnded && !conferenceEnded) {
             return context.getString(R.string.session_finished);
@@ -154,7 +141,7 @@ public class UIUtils {
     }
 
     /**
-     * Format and return the given {@link Blocks} values using {@link #CONFERENCE_TIME_ZONE}
+     * Format and return the given {@link Blocks} values using Config.CONFERENCE_TIME_ZONE
      * (unless local time was explicitly requested by the user).
      */
     public static String formatBlockTimeString(long blockStart, long blockEnd,
@@ -202,7 +189,7 @@ public class UIUtils {
                                          TextView subtitleView, CharSequence subtitle) {
         long currentTimeMillis = getCurrentTime(context);
 
-        boolean conferenceEnded = currentTimeMillis > CONFERENCE_END_MILLIS;
+        boolean conferenceEnded = currentTimeMillis > Config.CONFERENCE_END_MILLIS;
         boolean blockEnded = currentTimeMillis > blockEnd;
         boolean blockNow = (blockStart <= currentTimeMillis && currentTimeMillis <= blockEnd);
 
@@ -282,13 +269,13 @@ public class UIUtils {
                 hashtags = "#" + hashtags;
             }
 
-            if (hashtags.contains(CONFERENCE_HASHTAG)) {
+            if (hashtags.contains(Config.CONFERENCE_HASHTAG)) {
                 return hashtags;
             }
 
-            return CONFERENCE_HASHTAG + " " + hashtags;
+            return Config.CONFERENCE_HASHTAG + " " + hashtags;
         } else {
-            return CONFERENCE_HASHTAG;
+            return Config.CONFERENCE_HASHTAG;
         }
     }
 

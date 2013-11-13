@@ -46,6 +46,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.conferenceengineer.android.iosched.Config;
 import com.conferenceengineer.android.iosched.R;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract;
 import com.conferenceengineer.android.iosched.ui.tablet.SessionsSandboxMultiPaneActivity;
@@ -407,7 +408,7 @@ public class ScheduleFragment extends ListFragment implements
                     }
 
                     // Determine if the session is in the past
-                    boolean conferenceEnded = currentTimeMillis > UIUtils.CONFERENCE_END_MILLIS;
+                    boolean conferenceEnded = currentTimeMillis > Config.CONFERENCE_END_MILLIS;
                     boolean blockEnded = currentTimeMillis > blockEnd;
                     if (blockEnded && !conferenceEnded) {
                         subtitle = getString(R.string.session_finished);

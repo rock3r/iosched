@@ -22,6 +22,7 @@ import android.provider.BaseColumns;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
 
+import com.conferenceengineer.android.iosched.Config;
 import com.google.android.apps.dashclock.api.ExtensionData;
 import com.conferenceengineer.android.iosched.R;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract;
@@ -72,7 +73,7 @@ public class DashClockExtension extends com.google.android.apps.dashclock.api.Da
         }
 
         long currentTime = UIUtils.getCurrentTime(this);
-        if (currentTime >= UIUtils.CONFERENCE_END_MILLIS) {
+        if (currentTime >= Config.CONFERENCE_END_MILLIS) {
             publishUpdate(new ExtensionData()
                     .visible(true)
                     .icon(R.drawable.dashclock_extension)
