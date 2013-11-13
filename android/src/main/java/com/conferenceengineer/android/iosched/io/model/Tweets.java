@@ -5,11 +5,7 @@ import com.conferenceengineer.android.iosched.io.ServerRequest;
 import java.io.IOException;
 
 /**
- * Created with IntelliJ IDEA.
- * User: alsutton
- * Date: 17/09/2013
- * Time: 15:26
- * To change this template use File | Settings | File Templates.
+ * Class to interact with the tweets stored on the server.
  */
 public class Tweets {
 
