@@ -18,24 +18,24 @@ package com.conferenceengineer.android.iosched;
 
 public class Config {
     // Log tag
-    public static final String LOG_TAG = "DCUK2013";
+    public static final String LOG_TAG = "DCNL2013";
 
     // General configuration
     public static final int CONFERENCE_YEAR = 2013;
 
     // OAuth 2.0 related config
-    public static final String APP_NAME = "DroidconUK2013-Android";
+    public static final String APP_NAME = "DroidconNL2013-Android";
 
     // Conference API-specific config
-    public static final String EVENT_ID = "droidconuk2013";
-    public static final String CONFERENCE_IMAGE_PREFIX_URL = "http://uk.droidcon.com/2013/wp-content/uploads/";
+    public static final String EVENT_ID = "droidconnl2013";
+    public static final String CONFERENCE_IMAGE_PREFIX_URL = "http://www.droidcon.nl/wp-content/uploads/";
 
     // Conference public WiFi AP parameters
     public static final String WIFI_SSID = "Droidcon";
     public static final String WIFI_PASSPHRASE = "DroidconW1F1";
 
     // Conference hashtag
-    public static final String CONFERENCE_HASHTAG = "#droidconuk";
+    public static final String CONFERENCE_HASHTAG = "#droidconnl";
 
     // GCM config
     // TODO: Add your GCM information here.
