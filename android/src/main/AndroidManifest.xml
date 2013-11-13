@@ -53,7 +53,7 @@
             android:name="com.conferenceengineer.android.iosched.permission.C2D_MESSAGE"
             android:protectionLevel="signature" />
     <uses-permission
-            android:name="com.funkyandroid.droidcon.uk.iosched.permission.C2D_MESSAGE" />
+            android:name="com.conferenceengineer.android.iosched.permission.C2D_MESSAGE" />
 
     <uses-feature
         android:name="android.hardware.location"
@@ -143,13 +143,13 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.dir/vnd.droidconuk2013.session" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.conferenceengineer.session" />
             </intent-filter>
             <!-- HomeActivity and not TrackDetailActivity is the parent because SessionsActivity
               is not used to show sessions for a given track. -->
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.HomeActivity" />
-            <meta-data android:name="com.funkyandroid.droidcon.uk.iosched.meta.TARGET_FORM_FACTOR"
+            <meta-data android:name="com.conferenceengineer.android.iosched.meta.TARGET_FORM_FACTOR"
                 android:value="handset" />
         </activity>
 
@@ -162,11 +162,11 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.track" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.track" />
             </intent-filter>
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.HomeActivity" />
-            <meta-data android:name="com.funkyandroid.droidcon.uk.iosched.meta.TARGET_FORM_FACTOR"
+            <meta-data android:name="com.conferenceengineer.android.iosched.meta.TARGET_FORM_FACTOR"
                 android:value="handset" />
         </activity>
 
@@ -177,13 +177,13 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.session" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.session" />
             </intent-filter>
             <!-- Android Beam for session details -->
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.session" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.session" />
             </intent-filter>
             <!-- Web URLs -->
             <intent-filter android:label="@string/app_name">
@@ -197,7 +197,7 @@
             <!-- PARENT_ACTIVITY alone is insufficient for Up navigation for this activity -->
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.phone.SessionsActivity" />
-            <meta-data android:name="com.funkyandroid.droidcon.uk.iosched.meta.TARGET_FORM_FACTOR"
+            <meta-data android:name="com.conferenceengineer.android.iosched.meta.TARGET_FORM_FACTOR"
                 android:value="handset" />
         </activity>
 
@@ -207,7 +207,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.session_feedback" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.session_feedback" />
             </intent-filter>
             <!-- PARENT_ACTIVITY alone is insufficient for Up navigation for this activity -->
             <meta-data android:name="android.support.PARENT_ACTIVITY"
@@ -222,12 +222,12 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.sandbox" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.sandbox" />
             </intent-filter>
             <!-- PARENT_ACTIVITY alone is insufficient for Up navigation for this activity -->
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.phone.TrackDetailActivity" />
-            <meta-data android:name="com.funkyandroid.droidcon.uk.iosched.meta.TARGET_FORM_FACTOR"
+            <meta-data android:name="com.conferenceengineer.android.iosched.meta.TARGET_FORM_FACTOR"
                 android:value="handset" />
         </activity>
 
@@ -243,35 +243,35 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.track" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.track" />
             </intent-filter>
             <!-- can show session and sandbox company lists -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.dir/vnd.droidconuk2013.session" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.conferenceengineer.session" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.dir/vnd.droidconuk2013.sandbox" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.conferenceengineer.sandbox" />
             </intent-filter>
             <!-- can show session and sandbox company details -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.session" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.session" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.sandbox" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.sandbox" />
             </intent-filter>
             <!-- Android Beam for session details -->
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.session" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.session" />
             </intent-filter>
             <!-- Web URLs -->
             <intent-filter android:label="@string/app_name">
@@ -284,7 +284,7 @@
             </intent-filter>
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.HomeActivity" />
-            <meta-data android:name="com.funkyandroid.droidcon.uk.iosched.meta.TARGET_FORM_FACTOR"
+            <meta-data android:name="com.conferenceengineer.android.iosched.meta.TARGET_FORM_FACTOR"
                 android:value="tablet" />
         </activity>
 
@@ -298,7 +298,7 @@
         <receiver android:name=".receiver.SessionAlarmReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="com.funkyandroid.droidcon.uk.iosched.action.UPDATE_CALENDAR_COMPLETED" />
+                <action android:name="com.conferenceengineer.android.iosched.action.UPDATE_CALENDAR_COMPLETED" />
             </intent-filter>
         </receiver>
 
@@ -318,7 +318,7 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <!-- Receives the registration id. -->
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-                <category android:name="com.funkyandroid.droidcon.uk.iosched" />
+                <category android:name="com.conferenceengineer.android.iosched" />
             </intent-filter>
         </receiver>
 
@@ -336,7 +336,7 @@
         <provider
             android:name=".provider.ScheduleProvider"
             android:authorities="com.conferenceengineer.android.iosched"
-            android:writePermission="com.funkyandroid.droidcon.uk.iosched.permission.WRITE_SCHEDULE"
+            android:writePermission="com.conferenceengineer.android.iosched.permission.WRITE_SCHEDULE"
             android:syncable="true"
             android:label="@string/app_name"
             android:exported="true" />
