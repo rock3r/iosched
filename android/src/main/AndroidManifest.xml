@@ -335,7 +335,7 @@
 
         <provider
             android:name="com.conferenceengineer.android.iosched.provider.ScheduleProvider"
-            android:authorities="com.conferenceengineer.android.iosched"
+            android:authorities="com.conferenceengineer.android.iosched.conference348"
             android:writePermission="com.conferenceengineer.android.iosched.permission.WRITE_SCHEDULE"
             android:syncable="true"
             android:label="@string/app_name"

@@ -210,7 +210,7 @@ public class ScheduleContract {
         String TILE_URL = "map_tile_url";
     }
 
-    public static final String CONTENT_AUTHORITY = "com.conferenceengineer.android.iosched";
+    public static final String CONTENT_AUTHORITY = "com.conferenceengineer.android.iosched.conference348";
 
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 
