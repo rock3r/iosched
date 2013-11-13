@@ -20,8 +20,7 @@ import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
-
-import com.conferenceengineer.android.iosched.R;
+import com.conferenceengineer.android.iosched.conference348.R;
 
 /**
  * Activity for customizing app settings.

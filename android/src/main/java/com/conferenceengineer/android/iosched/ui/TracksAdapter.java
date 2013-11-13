@@ -28,7 +28,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.conferenceengineer.android.iosched.R;
+import com.conferenceengineer.android.iosched.conference348.R;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract;
 import com.conferenceengineer.android.iosched.util.BitmapCache;
 import com.conferenceengineer.android.iosched.util.UIUtils;

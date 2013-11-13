@@ -16,11 +16,10 @@
 
 package com.conferenceengineer.android.iosched.ui;
 
-import com.conferenceengineer.android.iosched.R;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import com.conferenceengineer.android.iosched.conference348.R;
 
 /**
  * A {@link BaseActivity} that simply contains a single fragment. The intent used to invoke this

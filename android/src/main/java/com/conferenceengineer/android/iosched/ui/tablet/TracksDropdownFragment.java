@@ -16,7 +16,7 @@
 
 package com.conferenceengineer.android.iosched.ui.tablet;
 
-import com.conferenceengineer.android.iosched.R;
+import com.conferenceengineer.android.iosched.conference348.R;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract;
 import com.conferenceengineer.android.iosched.ui.TracksAdapter;
 import com.conferenceengineer.android.iosched.util.ParserUtils;

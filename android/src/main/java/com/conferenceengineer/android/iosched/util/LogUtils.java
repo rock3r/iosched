@@ -16,9 +16,8 @@
 
 package com.conferenceengineer.android.iosched.util;
 
-import com.conferenceengineer.android.iosched.BuildConfig;
-
 import android.util.Log;
+import com.conferenceengineer.android.iosched.conference348.BuildConfig;
 
 public class LogUtils {
     private static final String LOG_PREFIX = "iosched_";

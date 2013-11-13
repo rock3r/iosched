@@ -17,7 +17,7 @@
 package com.conferenceengineer.android.iosched.ui;
 
 import com.conferenceengineer.android.iosched.Config;
-import com.conferenceengineer.android.iosched.R;
+import com.conferenceengineer.android.iosched.conference348.R;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract.Announcements;
 import com.conferenceengineer.android.iosched.util.TimeUtils;
 import com.conferenceengineer.android.iosched.util.UIUtils;

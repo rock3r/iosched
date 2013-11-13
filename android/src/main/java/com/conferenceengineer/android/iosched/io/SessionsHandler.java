@@ -22,13 +22,12 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.conferenceengineer.android.iosched.io.ConferenceAPI;
+import com.conferenceengineer.android.iosched.conference348.R;
 import com.conferenceengineer.android.iosched.io.model.SessionResponse;
 import com.conferenceengineer.android.iosched.io.model.SessionsResponse;
 import com.conferenceengineer.android.iosched.io.model.TrackResponse;
 import com.conferenceengineer.android.iosched.io.model.TracksResponse;
 import com.conferenceengineer.android.iosched.Config;
-import com.conferenceengineer.android.iosched.R;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract.Sessions;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract.SyncColumns;

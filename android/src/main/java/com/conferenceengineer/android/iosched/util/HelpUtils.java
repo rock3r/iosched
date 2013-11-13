@@ -16,8 +16,6 @@
 
 package com.conferenceengineer.android.iosched.util;
 
-import com.conferenceengineer.android.iosched.R;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -39,6 +37,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.TextView;
+import com.conferenceengineer.android.iosched.conference348.R;
 
 /**
  * This is a set of helper methods for showing contextual help information in the app.
