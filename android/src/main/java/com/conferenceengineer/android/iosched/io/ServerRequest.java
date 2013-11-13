@@ -17,7 +17,7 @@ import java.util.StringTokenizer;
 public class ServerRequest<T extends ServerResponse> {
 
     /**
-     * The URL root for Droidcon data
+     * The URL root for event data
      */
 
     private static final String DATA_ROOT = INSERT_SERVER_URL_HERE;
@@ -112,9 +112,10 @@ public class ServerRequest<T extends ServerResponse> {
             inputStream = connection.getInputStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
             StringBuilder stringBuilder = new StringBuilder();
-            String line = null;
+            String line;
             while ((line = reader.readLine()) != null) {
-                stringBuilder.append(line + "\n");
+                stringBuilder.append(line);
+                stringBuilder.append('\n');
             }
             inputStream.close();
             inputStream = null;
