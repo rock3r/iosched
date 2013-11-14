@@ -21,6 +21,7 @@ import android.app.SearchManager;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.SyncStatusObserver;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -304,6 +305,11 @@ public class HomeActivity extends BaseActivity implements
                 searchView.setQueryRefinementEnabled(true);
             }
         }
+
+        if(!getResources().getBoolean(R.bool.has_conference_feedback_enabled)) {
+            menu.removeItem(R.id.menu_feedback);
+        }
+
         return true;
     }
 
@@ -320,6 +326,12 @@ public class HomeActivity extends BaseActivity implements
                     return true;
                 }
                 break;
+
+            case R.id.menu_feedback:
+                Intent feedbackIntent = new Intent(Intent.ACTION_VIEW);
+                feedbackIntent.setData(Uri.parse(Config.FEEDBACK_URL));
+                startActivity(feedbackIntent);
+                return true;
 
             case R.id.menu_about:
                 HelpUtils.showAbout(this);

@@ -35,11 +35,14 @@ public class Config {
     public static final long CONFERENCE_END_MILLIS = ParserUtils.parseTime(
             "2013-11-26T16:15:00.000+01:00");
 
+    // Feedback URL
+    public static final String FEEDBACK_URL = INSERT_FEEDBACK_URL;
+
     // OAuth 2.0 related config
     public static final String APP_NAME = "DroidconNL2013-Android";
 
     // Conference API-specific config
-    public static final String EVENT_ID = "droidconnl2013";
+    public static final String EVENT_ID = INSERT_EVENT_ID;
     public static final String CONFERENCE_IMAGE_PREFIX_URL = "http://www.droidcon.nl/wp-content/uploads/";
 
     // Conference public WiFi AP parameters
