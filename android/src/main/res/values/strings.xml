@@ -202,7 +202,7 @@
 
     <!-- Preferences -->
     <string name="pref_local_times_title">Show local times</string>
-    <string name="pref_local_times_description">When checked, show local times instead of British Summer Time (the timezone at the conference)</string>
+    <string name="pref_local_times_description">When checked, show local times instead of Central European Time (the timezone at the conference)</string>
     <string name="wifi_install_error_message">Sorry, unable to update WiFi configuration</string>
     <string name="wifi_install_success_message">The Droidcon WiFi network has been successfully added to this device</string>
 
