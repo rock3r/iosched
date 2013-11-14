@@ -333,7 +333,7 @@ public class SessionDetailFragment extends Fragment implements
         List<Pair<Integer, Intent>> links = new ArrayList<Pair<Integer, Intent>>();
 
         // Add session feedback link
-        if(getResources().getBoolean(R.bool.has_feedback_enabled)) {
+        if(getResources().getBoolean(R.bool.has_session_feedback_enabled)) {
             links.add(new Pair<Integer, Intent>(
                     R.string.session_feedback_submitlink,
                     new Intent(Intent.ACTION_VIEW, mSessionUri, getActivity(), SessionFeedbackActivity.class)
