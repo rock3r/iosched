@@ -18,4 +18,15 @@
     <bool name="has_conference_feedback_enabled">true</bool>
     <bool name="has_session_feedback_enabled">false</bool>
     <bool name="has_nfc_badges">false</bool>
+
+    <!--
+        appcompat import
+      -->
+
+    <bool name="abc_action_bar_embed_tabs_pre_jb">false</bool>
+    <bool name="abc_action_bar_expanded_action_views_exclusive">true</bool>
+    <bool name="abc_split_action_bar_is_narrow">true</bool>
+
+    <bool name="abc_config_showMenuShortcutsWhenKeyboardPresent">false</bool>
+
 </resources>
