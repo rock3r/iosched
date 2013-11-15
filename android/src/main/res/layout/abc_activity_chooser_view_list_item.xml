@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:textAppearance="?attr/textAppearanceLargePopupMenu"
+                android:textAppearance="@style/TextAppearance.ShareList"
                 android:duplicateParentState="true"
                 android:singleLine="true"
                 android:ellipsize="marquee"

@@ -301,8 +301,12 @@
         <item name="android:listChoiceIndicatorSingle">@drawable/btn_radio</item>
         <item name="android:editTextStyle">@style/Widget.IOSched.EditText</item>
         <item name="android:radioButtonStyle">@style/Widget.IOSched.RadioButton</item>
+    </style>
 
-        <item name="activityChooserViewStyle">@style/Widget.IOSched.ActivityChooserView</item>
+    <style name="TextAppearance.ShareList"
+            parent="TextAppearance.AppCompat.Widget.PopupMenu.Large">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
     <style name="Theme.IOSched.GreyBackground" parent="Theme.IOSched">
