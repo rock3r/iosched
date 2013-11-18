@@ -17,8 +17,8 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.conferenceengineer.android.iosched.conference348"
-    android:versionCode="201320"
-    android:versionName="2013.20"
+    android:versionCode="201321"
+    android:versionName="2013.21"
     android:installLocation="auto">
 
     <uses-sdk
