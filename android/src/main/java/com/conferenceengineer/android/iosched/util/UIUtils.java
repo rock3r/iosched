@@ -90,12 +90,6 @@ public class UIUtils {
      */
     private static final Pattern REGEX_HTML_ESCAPE = Pattern.compile(".*&\\S;.*");
 
-    /**
-     * Used in {@link #tryTranslateHttpIntent(android.app.Activity)}.
-     */
-    private static final Uri SESSION_DETAIL_WEB_URL_PREFIX
-            = Uri.parse("http://www.droidcon.nl/speakers/");
-
     private static StyleSpan sBoldSpan = new StyleSpan(Typeface.BOLD);
     private static ForegroundColorSpan sColorSpan = new ForegroundColorSpan(0xff111111);
 
@@ -626,11 +620,11 @@ public class UIUtils {
             return;
         }
 
-        String prefixPath = SESSION_DETAIL_WEB_URL_PREFIX.getPath();
+        String prefixPath = Config.SESSION_DETAIL_WEB_URL_PREFIX.getPath();
         String path = uri.getPath();
 
-        if (SESSION_DETAIL_WEB_URL_PREFIX.getScheme().equals(uri.getScheme()) &&
-                SESSION_DETAIL_WEB_URL_PREFIX.getHost().equals(uri.getHost()) &&
+        if (Config.SESSION_DETAIL_WEB_URL_PREFIX.getScheme().equals(uri.getScheme()) &&
+                Config.SESSION_DETAIL_WEB_URL_PREFIX.getHost().equals(uri.getHost()) &&
                 path.startsWith(prefixPath)) {
             String sessionId = path.substring(prefixPath.length());
             activity.setIntent(new Intent(
