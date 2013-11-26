@@ -38,7 +38,7 @@
             android:paddingRight="8dp"
             android:layout_gravity="center_vertical|start"
             android:scaleType="fitStart"
-            android:src="@drawable/actionbar_logo"
+            android:src="@drawable/conference_actionbar_logo"
             android:background="?android:selectableItemBackground"
             android:contentDescription="@string/app_name" />
         <ImageButton

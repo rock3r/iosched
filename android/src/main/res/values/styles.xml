@@ -356,8 +356,8 @@
         <item name="android:titleTextStyle">@style/ActionBar.TitleText</item>
         <item name="titleTextStyle">@style/ActionBar.TitleText</item>
         <item name="android:actionMenuTextColor">@android:color/white</item>
-        <item name="android:logo">@drawable/actionbar_logo</item>
-        <item name="logo">@drawable/actionbar_logo</item>
+        <item name="android:logo">@drawable/conference_actionbar_logo</item>
+        <item name="logo">@drawable/conference_actionbar_logo</item>
     </style>
 
     <style name="ActionBar.TitleText" parent="FrameworkRoot.ActionBar.TitleText">
