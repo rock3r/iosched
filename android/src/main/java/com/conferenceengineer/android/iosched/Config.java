@@ -16,6 +16,7 @@
 
 package com.conferenceengineer.android.iosched;
 
+import android.net.Uri;
 import com.conferenceengineer.android.iosched.util.ParserUtils;
 
 import java.util.TimeZone;
@@ -35,6 +36,9 @@ public class Config {
 
     // The base URL for event data
     public static final String DATA_ROOT = INSERT_UPDATE_URL;
+
+    // Used in {@link UIUtils#tryTranslateHttpIntent(android.app.Activity)}.
+    public static final Uri SESSION_DETAIL_WEB_URL_PREFIX = Uri.parse("http://www.droidcon.nl/speakers/");
 
     // Feedback URL
     public static final String FEEDBACK_URL = INSERT_FEEDBACK_URL;
