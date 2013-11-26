@@ -104,8 +104,21 @@ public class WhatsOnFragment extends Fragment implements
 
     private void setupAfter() {
         // After conference, show canned text.
-        mInflater.inflate(R.layout.whats_on_thank_you,
-                mRootView, true);
+        if(getResources().getBoolean(R.bool.has_conference_feedback_enabled)) {
+            mInflater.inflate(R.layout.whats_on_feedback,
+                    mRootView, true);
+            mRootView.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent feedbackIntent = new Intent(Intent.ACTION_VIEW);
+                    feedbackIntent.setData(Uri.parse(Config.FEEDBACK_URL));
+                    startActivity(feedbackIntent);
+                }
+            });
+        } else {
+            mInflater.inflate(R.layout.whats_on_thank_you,
+                    mRootView, true);
+        }
     }
 
     private void setupDuring() {
