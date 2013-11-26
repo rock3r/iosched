@@ -1,6 +1,7 @@
 package com.conferenceengineer.android.iosched.io;
 
 import android.util.Log;
+import com.conferenceengineer.android.iosched.Config;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -15,12 +16,6 @@ import java.util.StringTokenizer;
  * Base Class for classes which request data from the server
  */
 public class ServerRequest<T extends ServerResponse> {
-
-    /**
-     * The URL root for event data
-     */
-
-    private static final String DATA_ROOT = INSERT_SERVER_URL_HERE;
 
     /**
      * The parameter types for the getters to use to fill URL parameters
@@ -81,7 +76,7 @@ public class ServerRequest<T extends ServerResponse> {
         throws IOException {
         HttpURLConnection connection;
         try {
-            URL requestURL = new URL(DATA_ROOT+expandURLParameters());
+            URL requestURL = new URL(Config.DATA_ROOT+expandURLParameters());
             connection = (HttpURLConnection)requestURL.openConnection();
         } catch (NoSuchMethodException e) {
             throw new IOException("Error constructing request URL", e);

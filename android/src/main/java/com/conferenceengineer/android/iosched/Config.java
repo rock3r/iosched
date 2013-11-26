@@ -30,10 +30,11 @@ public class Config {
     // Conference times
     public static final TimeZone CONFERENCE_TIME_ZONE = TimeZone.getTimeZone("Europe/Amsterdam");
 
-    public static final long CONFERENCE_START_MILLIS = ParserUtils.parseTime(
-            "2013-11-25T08:30:00.000+01:00");
-    public static final long CONFERENCE_END_MILLIS = ParserUtils.parseTime(
-            "2013-11-26T16:15:00.000+01:00");
+    public static final long CONFERENCE_START_MILLIS = ParserUtils.parseTime("2013-11-25T08:30:00.000+01:00");
+    public static final long CONFERENCE_END_MILLIS = ParserUtils.parseTime("2013-11-26T16:15:00.000+01:00");
+
+    // The base URL for event data
+    public static final String DATA_ROOT = INSERT_UPDATE_URL;
 
     // Feedback URL
     public static final String FEEDBACK_URL = INSERT_FEEDBACK_URL;
@@ -46,8 +47,8 @@ public class Config {
     public static final String CONFERENCE_IMAGE_PREFIX_URL = "http://www.droidcon.nl/wp-content/uploads/";
 
     // Conference public WiFi AP parameters
-    public static final String WIFI_SSID = "Droidcon";
-    public static final String WIFI_PASSPHRASE = "DroidconW1F1";
+    public static final String WIFI_SSID = INSERT_WIFI_SSID;
+    public static final String WIFI_PASSPHRASE = INSERT_WIFI_PASSWORD;
 
     // Conference hashtag
     public static final String CONFERENCE_HASHTAG = "#droidconnl";
