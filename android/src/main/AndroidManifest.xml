@@ -16,9 +16,9 @@
 
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.funkyandroid.droidcon.uk.iosched"
-    android:versionCode="201317"
-    android:versionName="2013.17"
+    package="com.conferenceengineer.android.iosched.conference348"
+    android:versionCode="201325"
+    android:versionName="2013.25"
     android:installLocation="auto">
 
     <uses-sdk
@@ -26,15 +26,13 @@
         android:targetSdkVersion="18" />
 
     <permission
-        android:name="com.funkyandroid.droidcon.uk.iosched.permission.WRITE_SCHEDULE"
+        android:name="com.conferenceengineer.android.iosched.permission.WRITE_SCHEDULE"
         android:protectionLevel="normal"
         android:label="@string/permission_write"
         android:description="@string/permission_write" />
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
@@ -50,10 +48,10 @@
     <uses-permission
             android:name="com.google.android.c2dm.permission.RECEIVE" />
     <permission
-            android:name="com.funkyandroid.droidcon.uk.iosched.permission.C2D_MESSAGE"
+            android:name="com.conferenceengineer.android.iosched.permission.C2D_MESSAGE"
             android:protectionLevel="signature" />
     <uses-permission
-            android:name="com.funkyandroid.droidcon.uk.iosched.permission.C2D_MESSAGE" />
+            android:name="com.conferenceengineer.android.iosched.permission.C2D_MESSAGE" />
 
     <uses-feature
         android:name="android.hardware.location"
@@ -61,8 +59,8 @@
 
     <application
         android:label="@string/app_name"
-        android:icon="@drawable/ic_launcher"
-        android:logo="@drawable/actionbar_logo"
+        android:icon="@drawable/conference_ic_launcher"
+        android:logo="@drawable/conference_actionbar_logo"
         android:theme="@style/Theme.IOSched"
         android:hardwareAccelerated="true"
         android:allowBackup="true"
@@ -71,7 +69,7 @@
         <!-- Activities for both phones and tablets -->
 
         <activity
-            android:name=".ui.HomeActivity"
+            android:name="com.conferenceengineer.android.iosched.ui.HomeActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.IOSched.Home">
             <intent-filter>
@@ -81,49 +79,49 @@
         </activity>
 
         <activity
-            android:name=".ui.SocialStreamActivity"
+            android:name="com.conferenceengineer.android.iosched.ui.SocialStreamActivity"
             android:label="@string/title_tagstream"
             android:theme="@style/Theme.IOSched.PlusStream"
-            android:parentActivityName=".ui.HomeActivity">
+            android:parentActivityName="com.conferenceengineer.android.iosched.ui.HomeActivity">
             <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.HomeActivity" />
+                android:value="com.conferenceengineer.android.iosched.ui.HomeActivity" />
         </activity>
 
         <activity
-            android:name=".ui.AnnouncementsActivity"
+            android:name="com.conferenceengineer.android.iosched.ui.AnnouncementsActivity"
             android:label="@string/title_announcements"
             android:theme="@style/Theme.IOSched.PlusStream"
-            android:parentActivityName=".ui.HomeActivity">
+            android:parentActivityName="com.conferenceengineer.android.iosched.ui.HomeActivity">
             <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.HomeActivity" />
+                android:value="com.conferenceengineer.android.iosched.ui.HomeActivity" />
         </activity>
 
         <activity
-            android:name=".ui.SearchActivity"
+            android:name="com.conferenceengineer.android.iosched.ui.SearchActivity"
             android:label="@string/title_search"
             android:launchMode="singleTop"
             android:theme="@style/Theme.IOSched.GreyBackground"
-            android:parentActivityName=".ui.HomeActivity">
+            android:parentActivityName="com.conferenceengineer.android.iosched.ui.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="android.app.searchable" android:resource="@xml/searchable" />
             <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.HomeActivity" />
+                android:value="com.conferenceengineer.android.iosched.ui.HomeActivity" />
         </activity>
 
         <activity
-            android:name=".ui.SettingsActivity"
+            android:name="com.conferenceengineer.android.iosched.ui.SettingsActivity"
             android:label="@string/title_settings"
             android:theme="@style/Theme.IOSched"
-            android:parentActivityName=".ui.HomeActivity">
+            android:parentActivityName="com.conferenceengineer.android.iosched.ui.HomeActivity">
             <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.HomeActivity" />
+                android:value="com.conferenceengineer.android.iosched.ui.HomeActivity" />
         </activity>
 
         <activity
-            android:name=".ui.NfcBadgeActivity"
+            android:name="com.conferenceengineer.android.iosched.ui.NfcBadgeActivity"
             android:theme="@android:style/Theme.NoDisplay"
             android:enabled="@bool/has_nfc_badges">
             <intent-filter android:priority="-999">
@@ -136,51 +134,54 @@
         <!-- Phone-only activities -->
 
         <activity
-            android:name=".ui.phone.SessionsActivity"
+            android:name="com.conferenceengineer.android.iosched.ui.phone.SessionsActivity"
             android:label="@string/title_sessions"
-            android:parentActivityName=".ui.HomeActivity">
+            android:parentActivityName="com.conferenceengineer.android.iosched.ui.HomeActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.dir/vnd.droidconuk2013.session" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.conferenceengineer.session" />
             </intent-filter>
             <!-- HomeActivity and not TrackDetailActivity is the parent because SessionsActivity
               is not used to show sessions for a given track. -->
             <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.HomeActivity" />
-            <meta-data android:name="com.funkyandroid.droidcon.uk.iosched.meta.TARGET_FORM_FACTOR"
+                android:value="com.conferenceengineer.android.iosched.ui.HomeActivity" />
+            <meta-data android:name="com.conferenceengineer.android.iosched.meta.TARGET_FORM_FACTOR"
                 android:value="handset" />
         </activity>
 
         <activity
-            android:name=".ui.phone.TrackDetailActivity"
+            android:name="com.conferenceengineer.android.iosched.ui.phone.TrackDetailActivity"
             android:label="@string/title_tracks"
             android:theme="@style/Theme.IOSched.GreyBackground"
-            android:parentActivityName=".ui.HomeActivity">
+            android:parentActivityName="com.conferenceengineer.android.iosched.ui.HomeActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.track" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.track" />
             </intent-filter>
             <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.HomeActivity" />
-            <meta-data android:name="com.funkyandroid.droidcon.uk.iosched.meta.TARGET_FORM_FACTOR"
+                android:value="com.conferenceengineer.android.iosched.ui.HomeActivity" />
+            <meta-data android:name="com.conferenceengineer.android.iosched.meta.TARGET_FORM_FACTOR"
                 android:value="handset" />
         </activity>
 
-        <activity android:name=".ui.phone.SessionDetailActivity"
+        <activity android:name="com.conferenceengineer.android.iosched.ui.phone.SessionDetailActivity"
             android:label="@string/title_session_detail"
-            android:parentActivityName=".ui.phone.SessionsActivity">
+            android:parentActivityName="com.conferenceengineer.android.iosched.ui.phone.SessionsActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.session" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.session" />
             </intent-filter>
             <!-- Android Beam for session details -->
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.session" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.session" />
             </intent-filter>
             <!-- Web URLs -->
             <intent-filter android:label="@string/app_name">
@@ -193,79 +194,82 @@
             </intent-filter>
             <!-- PARENT_ACTIVITY alone is insufficient for Up navigation for this activity -->
             <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.phone.SessionsActivity" />
-            <meta-data android:name="com.funkyandroid.droidcon.uk.iosched.meta.TARGET_FORM_FACTOR"
+                android:value="com.conferenceengineer.android.iosched.ui.phone.SessionsActivity" />
+            <meta-data android:name="com.conferenceengineer.android.iosched.meta.TARGET_FORM_FACTOR"
                 android:value="handset" />
         </activity>
 
-        <activity android:name=".ui.SessionFeedbackActivity"
-            android:label="@string/title_session_feedback">
+        <activity android:name="com.conferenceengineer.android.iosched.ui.SessionFeedbackActivity"
+            android:label="@string/title_session_feedback"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.session_feedback" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.session_feedback" />
             </intent-filter>
             <!-- PARENT_ACTIVITY alone is insufficient for Up navigation for this activity -->
             <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.phone.SessionsActivity" />
+                android:value="com.conferenceengineer.android.iosched.ui.phone.SessionsActivity" />
         </activity>
 
 
-        <activity android:name=".ui.phone.SandboxDetailActivity"
+        <activity android:name="com.conferenceengineer.android.iosched.ui.phone.SandboxDetailActivity"
             android:label="@string/title_sandbox_detail"
-            android:parentActivityName=".ui.phone.TrackDetailActivity">
+            android:parentActivityName="com.conferenceengineer.android.iosched.ui.phone.TrackDetailActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.sandbox" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.sandbox" />
             </intent-filter>
             <!-- PARENT_ACTIVITY alone is insufficient for Up navigation for this activity -->
             <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.phone.TrackDetailActivity" />
-            <meta-data android:name="com.funkyandroid.droidcon.uk.iosched.meta.TARGET_FORM_FACTOR"
+                android:value="com.conferenceengineer.android.iosched.ui.phone.TrackDetailActivity" />
+            <meta-data android:name="com.conferenceengineer.android.iosched.meta.TARGET_FORM_FACTOR"
                 android:value="handset" />
         </activity>
 
         <!-- Tablet-only activities -->
 
         <activity
-            android:name=".ui.tablet.SessionsSandboxMultiPaneActivity"
+            android:name="com.conferenceengineer.android.iosched.ui.tablet.SessionsSandboxMultiPaneActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.IOSched.GreyBackground"
-            android:parentActivityName=".ui.HomeActivity">
+            android:parentActivityName="com.conferenceengineer.android.iosched.ui.HomeActivity"
+            android:exported="false">
             <!-- can show track details -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.track" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.track" />
             </intent-filter>
             <!-- can show session and sandbox company lists -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.dir/vnd.droidconuk2013.session" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.conferenceengineer.session" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.dir/vnd.droidconuk2013.sandbox" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.conferenceengineer.sandbox" />
             </intent-filter>
             <!-- can show session and sandbox company details -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.session" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.session" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.sandbox" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.sandbox" />
             </intent-filter>
             <!-- Android Beam for session details -->
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.droidconuk2013.session" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.conferenceengineer.session" />
             </intent-filter>
             <!-- Web URLs -->
             <intent-filter android:label="@string/app_name">
@@ -277,26 +281,26 @@
                     android:pathPrefix="/events/io/sessions/" />
             </intent-filter>
             <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.HomeActivity" />
-            <meta-data android:name="com.funkyandroid.droidcon.uk.iosched.meta.TARGET_FORM_FACTOR"
+                android:value="com.conferenceengineer.android.iosched.ui.HomeActivity" />
+            <meta-data android:name="com.conferenceengineer.android.iosched.meta.TARGET_FORM_FACTOR"
                 android:value="tablet" />
         </activity>
 
         <!-- TaskStackBuilder proxy activity for widgets and notifications. -->
 
         <activity
-            android:name=".ui.TaskStackBuilderProxyActivity"
+            android:name="com.conferenceengineer.android.iosched.ui.TaskStackBuilderProxyActivity"
             android:theme="@android:style/Theme.NoDisplay" />
 
         <!-- Session alarm/calendar integrating components. -->
-        <receiver android:name=".receiver.SessionAlarmReceiver" >
+        <receiver android:name="com.conferenceengineer.android.iosched.receiver.SessionAlarmReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="com.funkyandroid.droidcon.uk.iosched.action.UPDATE_CALENDAR_COMPLETED" />
+                <action android:name="com.conferenceengineer.android.iosched.action.UPDATE_CALENDAR_COMPLETED" />
             </intent-filter>
         </receiver>
 
-        <service android:name=".service.SessionAlarmService" />
+        <service android:name="com.conferenceengineer.android.iosched.service.SessionAlarmService" />
 
         <!--
           BroadcastReceiver that will receive the C2DM messages from GCM
@@ -305,14 +309,14 @@
           The com.google.android.c2dm.permission.SEND permission is necessary
           so only GCM services can send data messages for the app.
         -->
-        <receiver android:name=".gcm.GCMRedirectedBroadcastReceiver"
+        <receiver android:name="com.conferenceengineer.android.iosched.gcm.GCMRedirectedBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <!-- Receives the actual messages. -->
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <!-- Receives the registration id. -->
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-                <category android:name="com.funkyandroid.droidcon.uk.iosched" />
+                <category android:name="com.conferenceengineer.android.iosched" />
             </intent-filter>
         </receiver>
 
@@ -323,34 +327,34 @@
           By default, it must be named .GCMIntentService, unless the
           application uses a custom BroadcastReceiver that redefines its name.
         -->
-        <service android:name=".gcm.GCMIntentService" />
+        <service android:name="com.conferenceengineer.android.iosched.gcm.GCMIntentService" />
 
         <!-- Data, sync and schedule editing components -->
 
         <provider
-            android:name=".provider.ScheduleProvider"
-            android:authorities="com.funkyandroid.droidcon.uk.iosched"
-            android:writePermission="com.funkyandroid.droidcon.uk.iosched.permission.WRITE_SCHEDULE"
+            android:name="com.conferenceengineer.android.iosched.provider.ScheduleProvider"
+            android:authorities="com.conferenceengineer.android.iosched.conference348"
+            android:writePermission="com.conferenceengineer.android.iosched.permission.WRITE_SCHEDULE"
             android:syncable="true"
             android:label="@string/app_name"
             android:exported="true" />
 
-        <service android:name=".service.ScheduleUpdaterService" />
-        <service android:name=".sync.SyncService" android:exported="false" />
+        <service android:name="com.conferenceengineer.android.iosched.service.ScheduleUpdaterService" />
+        <service android:name="com.conferenceengineer.android.iosched.sync.SyncService" android:exported="false" />
 
         <!-- a simple receiver that triggers a sync for any message it receives. used by our
              GCM implementation -->
-        <receiver android:name=".sync.TriggerSyncReceiver" />
+        <receiver android:name="com.conferenceengineer.android.iosched.sync.TriggerSyncReceiver" />
 
         <!-- Other manifest items -->
 
         <meta-data
             android:name="android.app.default_searchable"
-            android:value=".ui.SearchActivity" />
+            android:value="com.conferenceengineer.android.iosched.ui.SearchActivity" />
 
         <!-- App widget components -->
 
-        <receiver android:name=".appwidget.ScheduleWidgetProvider"
+        <receiver android:name="com.conferenceengineer.android.iosched.appwidget.ScheduleWidgetProvider"
             android:enabled="@bool/has_honeycomb">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -362,13 +366,13 @@
 
         <!-- The service serving the RemoteViews to the collection widget -->
 
-        <service android:name=".appwidget.ScheduleWidgetRemoteViewsService"
+        <service android:name="com.conferenceengineer.android.iosched.appwidget.ScheduleWidgetRemoteViewsService"
             android:permission="android.permission.BIND_REMOTEVIEWS"
             android:exported="false"
             android:enabled="@bool/has_honeycomb" />
 
         <!-- DashClock extension -->
-        <service android:name=".service.DashClockExtension"
+        <service android:name="com.conferenceengineer.android.iosched.service.DashClockExtension"
             android:icon="@drawable/dashclock_extension"
             android:label="@string/app_name"
             android:permission="com.google.android.apps.dashclock.permission.READ_EXTENSION_DATA">

@@ -1,0 +1,5 @@
+<resources>
+    <bool name="has_conference_feedback_enabled">true</bool>
+    <bool name="has_session_feedback_enabled">false</bool>
+    <bool name="has_nfc_badges">false</bool>
+</resources>

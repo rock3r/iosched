@@ -29,6 +29,11 @@
         android:orderInCategory="1"
         iosched:showAsAction="ifRoom" />
 
+    <item android:id="@+id/menu_feedback"
+          android:title="@string/description_feedback"
+          android:orderInCategory="96"
+          iosched:showAsAction="never" />
+
     <item android:id="@+id/menu_settings"
         android:title="@string/description_settings"
         android:orderInCategory="97"

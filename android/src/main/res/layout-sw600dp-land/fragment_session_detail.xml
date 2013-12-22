@@ -30,7 +30,7 @@
         style="@style/SessionDetailSubtitle" />
     </RelativeLayout>
 
-    <com.funkyandroid.droidcon.uk.iosched.ui.widget.ObservableScrollView
+    <com.conferenceengineer.android.iosched.ui.widget.ObservableScrollView
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -134,6 +134,6 @@
                 android:layout_height="@dimen/add_to_schedule_button_height" />
         </FrameLayout>
 
-    </com.funkyandroid.droidcon.uk.iosched.ui.widget.ObservableScrollView>
+    </com.conferenceengineer.android.iosched.ui.widget.ObservableScrollView>
 
 </LinearLayout>

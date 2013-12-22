@@ -14,8 +14,6 @@
   limitations under the License.
   -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">Droidcon London 2013</string>
-
     <string name="description_search">Search</string>
     <string name="description_refresh">Refresh</string>
     <string name="description_share">Share</string>
@@ -23,6 +21,7 @@
     <string name="description_remove_schedule">Remove from schedule</string>
     <string name="description_social_stream">View Tweets</string>
     <string name="description_compose">New post</string>
+    <string name="description_feedback">Submit Feedback</string>
     <string name="description_about">About</string>
     <string name="description_configure_wifi">Configure Wi-Fi</string>
     <string name="description_settings">Settings</string>
@@ -59,9 +58,6 @@
     <string name="all_tracks_sessions">All sessions</string>
     <string name="all_tracks_office_hours">All office hours</string>
     <string name="all_tracks_sandbox">All companies</string>
-    <string name="all_tracks_subtitle_sessions">All sessions at Droidcon London 2013.</string>
-    <string name="all_tracks_subtitle_office_hours">All office hours at Droidcon London 2013.</string>
-    <string name="all_tracks_subtitle_sandbox">All developer sandbox companies at Droidcon London 2013.</string>
     <string name="other_tracks">Other tracks</string>
 
     <string name="empty_sessions">No sessions found.</string>
@@ -72,7 +68,6 @@
     <string name="empty_waiting_for_sync">Waiting for sync&#8230;</string>
 
     <string name="unknown_room">(Unspecified Room)</string>
-    <string name="keynote_room">Auditorium</string>
 
     <string name="session_links">More</string>
     <string name="session_requirements">Requirements</string>
@@ -86,7 +81,6 @@
 
     <string name="codelab_title_template">Code Lab: <xliff:g id="title">%1$s</xliff:g></string>
 
-    <string name="search_label">Droidcon London Sessions</string>
     <string name="search_hint">Search sessions</string>
 
     <string name="share_template">Checking out \'<xliff:g id="title">%1$s</xliff:g>\' at <xliff:g id="hashtags">%2$s</xliff:g> <xliff:g id="url">%3$s</xliff:g></string>
@@ -98,18 +92,11 @@
     <string name="remove_from_schedule_desc">Remove from schedule</string>
 
     <!-- Announcements -->
-    <string name="whats_on_countdown_title_0"><xliff:g id="remaining_time">%1$s</xliff:g>\nuntil Droidcon London</string>
-    <plurals name="whats_on_countdown_title">
-        <item quantity="one"><xliff:g id="number_of_days">%1$s</xliff:g> day, <xliff:g id="remaining_time">%2$s</xliff:g>\nuntil Droidcon London</item>
-        <item quantity="other"><xliff:g id="number_of_days">%1$s</xliff:g> days, <xliff:g id="remaining_time">%2$s</xliff:g>\nuntil Droidcon London</item>
-    </plurals>
     <string name="whats_on_thank_you_short">Thanks!</string>
     <string name="whats_on_thank_you_title">See you next year!</string>
-    <string name="whats_on_thank_you_subtitle">Droidcon London 2013 has ended.</string>
+    <string name="whats_on_feedback_title">Click here to give us feedback</string>
     <string name="news_will_appear_here">Announcements will appear here</string>
-    <string name="welcome_to_google_i_o">Welcome to Droidcon London!</string>
 
-    <string name="permission_write">Modify Droidcon London schedule data</string>
 
     <plurals name="toast_added_to_schedule">
         <item quantity="one">Session added to your schedule</item>
@@ -147,7 +134,7 @@
     <string name="about_eula">End User License Agreement</string>
     <string name="about_licenses">Open Source Licenses</string>
     <string name="about_body"><![CDATA[
-        <b>Droidcon London 2013</b><br>
+        <b>Conference Engineer</b><br>
         Version %s<br/>
         (Based on iosched 2013)
     ]]></string>
@@ -201,9 +188,8 @@
 
     <!-- Preferences -->
     <string name="pref_local_times_title">Show local times</string>
-    <string name="pref_local_times_description">When checked, show local times instead of British Summer Time (the timezone at the conference)</string>
     <string name="wifi_install_error_message">Sorry, unable to update WiFi configuration</string>
-    <string name="wifi_install_success_message">The Droidcon WiFi network has been successfully added to this device</string>
+    <string name="wifi_install_success_message">The WiFi network has been successfully added to this device</string>
 
     <!-- Feedback -->
     <string name="session_feedback_submitlink">Submit Feedback</string>
@@ -240,8 +226,40 @@
     <string name="session_feedback_other">Anything else we should know?</string>
 
     <!-- More Misc -->
-    <string name="dashclock_extension_description">
-        Displays the next few items in your Droidcon London 2013 schedule.
-    </string>
     <string name="stream_retweets">%d RT</string>
+
+    <!--
+        appcompat import
+      -->
+
+    <!-- Label for the "Done" button on the far left of action mode toolbars. -->
+    <string name="abc_action_mode_done">Done</string>
+    <!-- Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] -->
+    <string name="abc_action_bar_home_description">Navigate home</string>
+    <!-- Content description for the action bar "up" affordance. [CHAR LIMIT=NONE] -->
+    <string name="abc_action_bar_up_description">Navigate up</string>
+    <!-- Content description for the action menu overflow button. [CHAR LIMIT=NONE] -->
+    <string name="abc_action_menu_overflow_description">More options</string>
+
+    <!-- SearchView accessibility description for search button [CHAR LIMIT=NONE] -->
+    <string name="abc_searchview_description_search">Search</string>
+    <!-- SearchView accessibility description for search text field [CHAR LIMIT=NONE] -->
+    <string name="abc_searchview_description_query">Search query</string>
+    <!-- SearchView accessibility description for clear button [CHAR LIMIT=NONE] -->
+    <string name="abc_searchview_description_clear">Clear query</string>
+    <!-- SearchView accessibility description for submit button [CHAR LIMIT=NONE] -->
+    <string name="abc_searchview_description_submit">Submit query</string>
+    <!-- SearchView accessibility description for voice button [CHAR LIMIT=NONE] -->
+    <string name="abc_searchview_description_voice">Voice search</string>
+
+    <!-- ActivityChooserView - accessibility support -->
+    <!-- Description of the shwoing of a popup window with activities to choose from. [CHAR LIMIT=NONE] -->
+    <string name="abc_activitychooserview_choose_application">Choose an app</string>
+    <!-- Title for a button to expand the list of activities in ActivityChooserView [CHAR LIMIT=25] -->
+    <string name="abc_activity_chooser_view_see_all">See all</string>
+    <!-- Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] -->
+    <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
+    <!-- Description of the choose target button in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] -->
+    <string name="abc_shareactionprovider_share_with">Share with</string>
+
 </resources>

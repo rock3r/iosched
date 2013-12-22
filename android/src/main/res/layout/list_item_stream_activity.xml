@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         style="@style/StreamListItem">
 
-    <com.funkyandroid.droidcon.uk.iosched.ui.widget.BezelImageView
+    <com.conferenceengineer.android.iosched.ui.widget.BezelImageView
             android:id="@+id/stream_user_pic"
             style="@style/StreamTweepPicture"/>
 
@@ -48,7 +48,7 @@
             android:layout_alignParentRight="true"
             style="@style/StreamTimestamp"/>
 
-    <com.funkyandroid.droidcon.uk.iosched.ui.widget.TweetTextView
+    <com.conferenceengineer.android.iosched.ui.widget.TweetTextView
             android:id="@+id/stream_content"
             android:layout_below="@id/stream_user_handle"
             android:layout_alignLeft="@id/stream_user_handle"
