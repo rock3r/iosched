@@ -1,14 +1,18 @@
-Droidcon UK 2013 customised IOSched
-===================================
+Droidcon Italy 2014 customised IOSched
+======================================
 
-* If you want to hack some coding please co-ordinate with Al Sutton
-(@alsutton on Twitter) to ensure you're not duplicating work *
+*If you want to hack some coding please co-ordinate with Sebastiano Poggi
+(@seebrock3r on Twitter) to ensure you're not duplicating work*
 
-This is a work in progress, things means things may not work. Much of the
-current work is focused on removing the dependancy on Googles APIs which
-may not be available to the non-Google apps (e.g. the developers.google.com
-endpoints for syncing).
-
-Feel free to fork and push.....
 
 Based on the awesome-sauce that is IOSched - http://code.google.com/p/iosched/
+and Al Sutton's even more awesome modifications to it for the Droidcon.
+
+This is a work in progress. Al Sutton removed dependencies to Google's services
+such as Google Developer endpoints, Google+ sign-in, etc. The conference data
+comes from Al's [Conference Engineer](http://conferenceengineer.com).
+
+This fork will concentrate on adapting the code base for the Droidcon Italy 2014
+(see http://droidcon.it).
+
+Feel free to fork and push...
