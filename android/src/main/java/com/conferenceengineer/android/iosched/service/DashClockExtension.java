@@ -76,7 +76,7 @@ public class DashClockExtension extends com.google.android.apps.dashclock.api.Da
         if (currentTime >= Config.CONFERENCE_END_MILLIS) {
             publishUpdate(new ExtensionData()
                     .visible(true)
-                    .icon(R.drawable.dashclock_extension)
+                    .icon(R.drawable.ic_dashclock)
                     .status(getString(R.string.whats_on_thank_you_short))
                     .expandedTitle(getString(R.string.whats_on_thank_you_title))
                     .expandedBody(getString(R.string.whats_on_thank_you_subtitle))
@@ -163,7 +163,7 @@ public class DashClockExtension extends com.google.android.apps.dashclock.api.Da
         if (blocks.size() > 0) {
             publishUpdate(new ExtensionData()
                     .visible(true)
-                    .icon(R.drawable.dashclock_extension)
+                    .icon(R.drawable.ic_dashclock)
                     .status(firstBlockStartTime)
                     .expandedTitle(blocks.get(0))
                     .expandedBody(TextUtils.join("\n", blocks.subList(1, blocks.size())))
