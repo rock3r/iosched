@@ -26,7 +26,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
-import com.conferenceengineer.android.iosched.conference348.R;
+import com.conferenceengineer.android.iosched.conference434.R;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract;
 import com.conferenceengineer.android.iosched.ui.HomeActivity;
 import com.conferenceengineer.android.iosched.util.UIUtils;
@@ -209,7 +209,7 @@ public class SessionAlarmService extends IntentService {
                         SessionAlarmService.NOTIFICATION_ARGB_COLOR,
                         SessionAlarmService.NOTIFICATION_LED_ON_MS,
                         SessionAlarmService.NOTIFICATION_LED_OFF_MS)
-                .setSmallIcon(R.drawable.conference_ic_notification)
+                .setSmallIcon(R.drawable.ic_notification)
                 .setContentIntent(pi)
                 .setPriority(Notification.PRIORITY_MAX)
                 .setAutoCancel(true);

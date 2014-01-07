@@ -22,7 +22,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.conferenceengineer.android.iosched.conference348.R;
+import com.conferenceengineer.android.iosched.conference434.R;
 import com.conferenceengineer.android.iosched.io.model.SessionResponse;
 import com.conferenceengineer.android.iosched.io.model.SessionsResponse;
 import com.conferenceengineer.android.iosched.io.model.TrackResponse;

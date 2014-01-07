@@ -22,7 +22,7 @@ import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
-import com.conferenceengineer.android.iosched.conference348.R;
+import com.conferenceengineer.android.iosched.conference434.R;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract;
 import com.conferenceengineer.android.iosched.ui.*;
 import com.conferenceengineer.android.iosched.ui.SandboxDetailFragment;

@@ -43,7 +43,7 @@ import android.view.*;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.conferenceengineer.android.iosched.conference348.R;
+import com.conferenceengineer.android.iosched.conference434.R;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract;
 import com.conferenceengineer.android.iosched.util.PrefUtils;
 import com.conferenceengineer.android.iosched.util.SessionsHelper;

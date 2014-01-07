@@ -29,7 +29,7 @@ import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.view.*;
 import android.widget.*;
-import com.conferenceengineer.android.iosched.conference348.R;
+import com.conferenceengineer.android.iosched.conference434.R;
 import com.conferenceengineer.android.iosched.io.model.TweetResponse;
 import com.conferenceengineer.android.iosched.io.model.Tweets;
 import com.conferenceengineer.android.iosched.io.model.TweetsResponse;

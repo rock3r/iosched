@@ -30,7 +30,7 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.ShareActionProvider;
 import android.view.MenuItem;
 import com.conferenceengineer.android.iosched.appwidget.ScheduleWidgetProvider;
-import com.conferenceengineer.android.iosched.conference348.R;
+import com.conferenceengineer.android.iosched.conference434.R;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract;
 import com.conferenceengineer.android.iosched.service.ScheduleUpdaterService;
 import com.conferenceengineer.android.iosched.ui.SocialStreamActivity;

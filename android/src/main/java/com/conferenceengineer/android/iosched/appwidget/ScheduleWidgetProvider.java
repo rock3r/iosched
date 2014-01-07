@@ -16,7 +16,7 @@
 
 package com.conferenceengineer.android.iosched.appwidget;
 
-import com.conferenceengineer.android.iosched.conference348.R;
+import com.conferenceengineer.android.iosched.conference434.R;
 import com.conferenceengineer.android.iosched.sync.SyncHelper;
 import com.conferenceengineer.android.iosched.ui.HomeActivity;
 import com.conferenceengineer.android.iosched.ui.TaskStackBuilderProxyActivity;

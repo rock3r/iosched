@@ -1,7 +1,7 @@
 package com.conferenceengineer.android.iosched.io;
 
 import android.util.Log;
-import com.conferenceengineer.android.iosched.Config;
+import com.conferenceengineer.android.iosched.ReservedConfig;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -76,7 +76,7 @@ public class ServerRequest<T extends ServerResponse> {
         throws IOException {
         HttpURLConnection connection;
         try {
-            URL requestURL = new URL(Config.DATA_ROOT+expandURLParameters());
+            URL requestURL = new URL(ReservedConfig.DATA_ROOT+expandURLParameters());
             connection = (HttpURLConnection)requestURL.openConnection();
         } catch (NoSuchMethodException e) {
             throw new IOException("Error constructing request URL", e);

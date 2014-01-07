@@ -20,7 +20,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
-import com.conferenceengineer.android.iosched.conference348.R;
+import com.conferenceengineer.android.iosched.conference434.R;
 import com.conferenceengineer.android.iosched.gcm.GCMCommand;
 import com.conferenceengineer.android.iosched.ui.HomeActivity;
 
@@ -41,7 +41,7 @@ public class AnnouncementCommand extends GCMCommand {
         ((NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE))
                 .notify(0, new NotificationCompat.Builder(context)
                         .setWhen(System.currentTimeMillis())
-                        .setSmallIcon(R.drawable.conference_ic_notification)
+                        .setSmallIcon(R.drawable.ic_notification)
                         .setTicker(message)
                         .setContentTitle(context.getString(R.string.app_name))
                         .setContentText(message)

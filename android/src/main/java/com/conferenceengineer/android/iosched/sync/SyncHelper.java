@@ -21,7 +21,7 @@ import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.os.RemoteException;
 import android.preference.PreferenceManager;
-import com.conferenceengineer.android.iosched.conference348.R;
+import com.conferenceengineer.android.iosched.conference434.R;
 import com.conferenceengineer.android.iosched.io.ConferenceAPI;
 import com.conferenceengineer.android.iosched.io.*;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract;
