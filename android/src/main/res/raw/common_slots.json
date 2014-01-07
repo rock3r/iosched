@@ -1,28 +1,22 @@
 {
   "day": [
-      {
-          "date": "2013-11-24",
-          "slot": [
-              {
-                  "start": "09:00",
-                  "end": "21:00",
-                  "title": "Hackathon",
-                  "meta": "You can hack but you can't hide"
-              }
-          ]
-      },
     {
-      "date": "2013-11-25",
+      "date": "2014-02-06",
       "slot": [
         {
             "start": "08:30",
-            "end": "09:30",
-            "title": "Welcome to DroidconNL",
-            "meta": "Doors open / registration"
+            "end": "09:15",
+            "title": "Registration"
         },
         {
-            "start": "11:00",
-            "end": "11:30",
+            "start": "09:15",
+            "end": "09:50",
+            "title": "Welcome to Droidcon Torino",
+            "meta": "Opening keynote"
+        },
+        {
+            "start": "11:10",
+            "end": "11:40",
             "type": "food",
             "title": "Coffee Break"
         },
@@ -33,33 +27,61 @@
           "title": "Lunch"
         },
         {
-          "start": "16:15",
-          "end": "20:00",
-          "type": "food",
-          "title": "Big Android BBQ & Girl Geek diner"
+            "start": "16:20",
+            "end": "16:40",
+            "type": "food",
+            "title": "Coffee Break"
         }
       ]
     },
     {
-      "date": "2013-11-26",
+      "date": "2014-02-07",
       "slot": [
         {
-            "start": "08:30",
-            "end": "09:30",
-            "title": "Welcome to DroidconNL",
-            "meta": "Doors open / registration"
+            "start": "11:10",
+            "end": "11:40",
+            "type": "food",
+            "title": "Coffee Break"
         },
         {
-              "start": "11:00",
-              "end": "11:30",
-              "type": "food",
-              "title": "Coffee Break"
+          "start": "13:00",
+          "end": "14:00",
+          "type": "food",
+          "title": "Lunch"
         },
         {
-              "start": "13:00",
-              "end": "14:00",
-              "type": "food",
-              "title": "Lunch"
+            "start": "16:20",
+            "end": "16:40",
+            "type": "food",
+            "title": "Coffee Break"
+        },
+        {
+          "start": "18:10",
+          "end": "18:30",
+          "title": "Droidcon Torino wrap-up",
+          "meta": "Closing keynote"
+        }
+      ]
+    },
+    {
+      "date": "2014-02-08",
+      "slot": [
+        {
+            "start": "10:00",
+            "end": "23:59",
+            "title": "Hackathon",
+            "meta":"Gotta hack 'em all"
+        }
+      ]
+    },
+    {
+      "date": "2014-02-09",
+      "slot": [
+        {
+            "start": "00:00",
+            "end": "16:00",
+            "title": "Hackathon",
+            "meta":"Gotta hack 'em all"
         }
       ]
     }
