@@ -23,7 +23,7 @@ import android.support.v7.app.ActionBar;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
-import com.conferenceengineer.android.iosched.conference348.R;
+import com.conferenceengineer.android.iosched.conference434.R;
 
 /**
  * Special layout for the containing of an overlay action bar (and its content) to correctly handle

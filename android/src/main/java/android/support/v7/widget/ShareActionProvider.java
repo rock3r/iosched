@@ -31,7 +31,7 @@ import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.SubMenu;
 import android.view.View;
 import android.support.v7.internal.widget.ActivityChooserModel.OnChooseActivityListener;
-import com.conferenceengineer.android.iosched.conference348.R;
+import com.conferenceengineer.android.iosched.conference434.R;
 
 /**
  * This is a provider for a share action. It is responsible for creating views

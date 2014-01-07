@@ -20,7 +20,7 @@ import android.support.v7.internal.widget.NativeActionModeAwareLayout;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
-import com.conferenceengineer.android.iosched.conference348.R;
+import com.conferenceengineer.android.iosched.conference434.R;
 
 class ActionBarImplHC extends ActionBarImplBase
         implements NativeActionModeAwareLayout.OnActionModeForChildListener {

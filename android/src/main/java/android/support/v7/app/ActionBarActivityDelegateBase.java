@@ -38,7 +38,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.FrameLayout;
-import com.conferenceengineer.android.iosched.conference348.R;
+import com.conferenceengineer.android.iosched.conference434.R;
 
 class ActionBarActivityDelegateBase extends ActionBarActivityDelegate implements
         MenuPresenter.Callback, MenuBuilder.Callback {
