@@ -1,28 +1,28 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">Droidcon NL</string>
+    <string name="app_name">Droidcon Torino</string>
 
-    <string name="all_tracks_subtitle_sessions">All sessions at Droidcon Amsterdam 2013.</string>
-    <string name="all_tracks_subtitle_office_hours">All office hours at Droidcon Amsterdam 2013.</string>
-    <string name="all_tracks_subtitle_sandbox">All developer sandbox companies at Droidcon Amsterdam 2013.</string>
+    <string name="all_tracks_subtitle_sessions">All sessions at Droidcon Torino 2014.</string>
+    <string name="all_tracks_subtitle_office_hours">All office hours at Droidcon Torino 2014.</string>
+    <string name="all_tracks_subtitle_sandbox">All developer sandbox companies at Droidcon Torino 2014.</string>
 
-    <string name="search_label">Droidcon Amsterdam Sessions</string>
+    <string name="search_label">Droidcon Torino Sessions</string>
 
-    <string name="whats_on_countdown_title_0"><xliff:g id="remaining_time">%1$s</xliff:g>\nuntil Droidcon Amsterdam</string>
+    <string name="whats_on_countdown_title_0"><xliff:g id="remaining_time">%1$s</xliff:g>\nuntil Droidcon Torino</string>
     <plurals name="whats_on_countdown_title">
-        <item quantity="one"><xliff:g id="number_of_days">%1$s</xliff:g> day, <xliff:g id="remaining_time">%2$s</xliff:g>\nuntil Droidcon Amsterdam</item>
-        <item quantity="other"><xliff:g id="number_of_days">%1$s</xliff:g> days, <xliff:g id="remaining_time">%2$s</xliff:g>\nuntil Droidcon Amsterdam</item>
+        <item quantity="one"><xliff:g id="number_of_days">%1$s</xliff:g> day, <xliff:g id="remaining_time">%2$s</xliff:g>\nuntil Droidcon Torino</item>
+        <item quantity="other"><xliff:g id="number_of_days">%1$s</xliff:g> days, <xliff:g id="remaining_time">%2$s</xliff:g>\nuntil Droidcon Torino</item>
     </plurals>
-    <string name="whats_on_thank_you_subtitle">Droidcon Amsterdam 2013 has ended.</string>
+    <string name="whats_on_thank_you_subtitle">Droidcon Torino 2014 has ended.</string>
 
-    <string name="welcome_to_google_i_o">Welcome to Droidcon Amsterdam!</string>
+    <string name="welcome_to_google_i_o">Welcome to Droidcon Torino!</string>
 
-    <string name="permission_write">Modify Droidcon Amsterdam schedule data</string>
+    <string name="permission_write">Modify Droidcon Torino schedule data</string>
 
     <string name="dashclock_extension_description">
-        Displays the next few items in your Droidcon Amsterdam 2013 schedule.
+        Displays the next few items in your Droidcon Torino 2014 schedule.
     </string>
 
-    <string name="keynote_room">Grote Zaal</string>
+    <string name="keynote_room">Sala Cavour</string>
 
     <string name="pref_local_times_description">When checked, show local times instead of Central European Time (the timezone at the conference)</string>
 
