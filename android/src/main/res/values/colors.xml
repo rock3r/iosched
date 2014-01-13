@@ -38,13 +38,4 @@
 
     <color name="whats_on_text">#dddddd</color>
     <color name="whats_on_bg_color">#80000000</color>
-
-    <!--
-        appcompat import
-      -->
-
-    <color name="abc_search_url_text_normal">#7fa87f</color>
-    <color name="abc_search_url_text_selected">@android:color/black</color>
-    <color name="abc_search_url_text_pressed">@android:color/black</color>
-
 </resources>
