@@ -23,10 +23,10 @@ import java.util.TimeZone;
 
 public class Config {
     // Log tag
-    public static final String LOG_TAG = "DCNL2013";
+    public static final String LOG_TAG = "DCIT2014";
 
     // General configuration
-    public static final int CONFERENCE_YEAR = 2013;
+    public static final int CONFERENCE_YEAR = 2014;
 
     // Conference times
     public static final TimeZone CONFERENCE_TIME_ZONE = TimeZone.getTimeZone("Europe/Amsterdam");
