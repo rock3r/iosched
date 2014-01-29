@@ -31,11 +31,11 @@ public class Config {
     // Conference times
     public static final TimeZone CONFERENCE_TIME_ZONE = TimeZone.getTimeZone("Europe/Amsterdam");
 
-    public static final long CONFERENCE_START_MILLIS = ParserUtils.parseTime("2014-02-06T08:30:00.000+01:00");  // TODO: confirm this date
-    public static final long CONFERENCE_END_MILLIS = ParserUtils.parseTime("2014-02-09T16:30:00.000+01:00");    // TODO: confirm this date
+    public static final long CONFERENCE_START_MILLIS = ParserUtils.parseTime("2014-02-06T08:30:00.000+01:00");
+    public static final long CONFERENCE_END_MILLIS = ParserUtils.parseTime("2014-02-09T17:30:00.000+01:00");
 
     // Used in {@link UIUtils#tryTranslateHttpIntent(android.app.Activity)}.
-    public static final Uri SESSION_DETAIL_WEB_URL_PREFIX = Uri.parse("http://it.droidcon.com/2014/prelineup/");
+    public static final Uri SESSION_DETAIL_WEB_URL_PREFIX = Uri.parse("http://it.droidcon.com/2014/lineup/");
 
     // Feedback URL
     public static final String FEEDBACK_URL = "http://it.droidcon.com/2014/contact/";
@@ -47,9 +47,9 @@ public class Config {
     public static final String EVENT_ID = "434";
     public static final String CONFERENCE_IMAGE_PREFIX_URL = "http://www.droidcon.it/wp-content/uploads/"; // TODO: confirm this URL
 
-    // Conference public WiFi AP parameters
-    public static final String WIFI_SSID = "droidconIT2014";           // TODO: confirm this data
-    public static final String WIFI_PASSPHRASE = "it's a-me, Mario!";  // TODO: confirm this data
+    // Conference public WiFi AP parameters (null passphrase means open network)
+    public static final String WIFI_SSID = "ToIncWiFi";
+    public static final String WIFI_PASSPHRASE = null;
 
     // Conference hashtag
     public static final String CONFERENCE_HASHTAG = "#droidconit";
