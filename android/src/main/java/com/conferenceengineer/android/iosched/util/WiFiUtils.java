@@ -57,7 +57,13 @@ public class WiFiUtils {
         WifiConfiguration config = new WifiConfiguration();
         // Must be in double quotes to tell system this is an ASCII SSID and passphrase.
         config.SSID = String.format("\"%s\"", Config.WIFI_SSID);
-        config.preSharedKey = String.format("\"%s\"", Config.WIFI_PASSPHRASE);
+        if (Config.WIFI_PASSPHRASE != null) {
+            config.preSharedKey = String.format("\"%s\"", Config.WIFI_PASSPHRASE);
+        }
+        else {
+            // Handle open Wi-Fi networks
+            config.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.NONE);
+        }
 
         // Store config
         final WifiManager wifiManager =
