@@ -24,8 +24,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SyncResult;
 import android.os.Bundle;
+
 import com.conferenceengineer.android.iosched.Config;
-import com.conferenceengineer.android.iosched.util.UIUtils;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -85,7 +85,7 @@ public class SyncService extends IntentService {
 
         } catch (IOException e) {
             ++syncResult.stats.numIoExceptions;
-            LOGE(Config.LOG_TAG, "Error syncing data for Droidcon London 2013.", e);
+            LOGE(Config.LOG_TAG, "Error syncing data", e);
         }
     }
 

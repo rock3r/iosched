@@ -39,11 +39,10 @@ public class ScheduleDatabase extends SQLiteOpenHelper {
     // NOTE: carefully update onUpgrade() when bumping database versions to make
     // sure user data is saved.
 
-    private static final int VER_2013_LAUNCH = 104;  // 1.0
-    private static final int VER_2013_RM2 = 105;  // 1.1
-    private static final int VER_2013_DROIDCON = 106;  // 1.2
-    private static final int VER_2013_DROIDCON_LAUNCH = 107;  // 1.2
-    private static final int DATABASE_VERSION = VER_2013_DROIDCON_LAUNCH;
+    private static final int VER_2013_LAUNCH = 104;
+    private static final int VER_2013_RM2 = 105;
+    private static final int VER_CONFERENCE = 106;
+    private static final int DATABASE_VERSION = VER_CONFERENCE;
 
     private final Context mContext;
 
@@ -332,7 +331,7 @@ public class ScheduleDatabase extends SQLiteOpenHelper {
                 + "UNIQUE (" + MapMarkerColumns.MARKER_ID + ") ON CONFLICT REPLACE)");
     }
 
-    private void doMigration2013Droidcon(SQLiteDatabase db) {
+    private void doMigrationForConference(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + Tables.SESSIONS + " ("
                    + BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                    + SyncColumns.UPDATED + " INTEGER NOT NULL,"
@@ -425,14 +424,6 @@ public class ScheduleDatabase extends SQLiteOpenHelper {
         int version = oldVersion;
 
         switch (version) {
-            // Clear all the data for the DCUK launch. This ensures
-            // some of the data issues from early betas don't affect
-            // users.
-            case VER_2013_DROIDCON_LAUNCH:
-                deleteAllTables(db);
-                onCreate(db);
-                break;
-
             // Note: Data from prior years not preserved.
             case VER_2013_LAUNCH:
                 LOGI(TAG, "Performing migration for DB version " + version);
@@ -450,9 +441,9 @@ public class ScheduleDatabase extends SQLiteOpenHelper {
                 db.execSQL("DROP TABLE IF EXISTS " + Tables.SESSIONS_SEARCH);
                 db.execSQL("DROP TABLE IF EXISTS " + Tables.BLOCKS);
                 // Apply new schema changes
-                doMigration2013Droidcon(db);
-            case VER_2013_DROIDCON:
-                version = VER_2013_DROIDCON;
+                doMigrationForConference(db);
+            case VER_CONFERENCE:
+                version = VER_CONFERENCE;
                 LOGI(TAG, "DB at version " + version);
                 // Current version, no further action necessary
         }

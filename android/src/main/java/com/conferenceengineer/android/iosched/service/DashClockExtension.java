@@ -23,7 +23,7 @@ import android.text.TextUtils;
 import android.text.format.DateUtils;
 
 import com.conferenceengineer.android.iosched.Config;
-import com.conferenceengineer.android.iosched.conference348.R;
+import com.conferenceengineer.android.iosched.conference686.R;
 import com.google.android.apps.dashclock.api.ExtensionData;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract;
 import com.conferenceengineer.android.iosched.ui.HomeActivity;

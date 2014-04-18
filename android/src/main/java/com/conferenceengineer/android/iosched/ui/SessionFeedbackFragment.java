@@ -16,10 +16,6 @@
 
 package com.conferenceengineer.android.iosched.ui;
 
-import com.conferenceengineer.android.iosched.conference348.R;
-import com.conferenceengineer.android.iosched.provider.ScheduleContract;
-import com.conferenceengineer.android.iosched.provider.ScheduleContract.Feedback;
-
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -29,12 +25,17 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
-
-import android.view.*;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import com.conferenceengineer.android.iosched.conference686.R;
+import com.conferenceengineer.android.iosched.provider.ScheduleContract;
+import com.conferenceengineer.android.iosched.provider.ScheduleContract.Feedback;
 
 import static com.conferenceengineer.android.iosched.util.LogUtils.LOGD;
 import static com.conferenceengineer.android.iosched.util.LogUtils.makeLogTag;

@@ -17,7 +17,7 @@
 package com.conferenceengineer.android.iosched.ui;
 
 import android.support.v4.app.Fragment;
-import com.conferenceengineer.android.iosched.conference348.R;
+import com.conferenceengineer.android.iosched.conference686.R;
 
 public class AnnouncementsActivity extends SimpleSinglePaneActivity {
     @Override

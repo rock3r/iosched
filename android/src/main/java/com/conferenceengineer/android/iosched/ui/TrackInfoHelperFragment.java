@@ -16,9 +16,6 @@
 
 package com.conferenceengineer.android.iosched.ui;
 
-import com.conferenceengineer.android.iosched.conference348.R;
-import com.conferenceengineer.android.iosched.provider.ScheduleContract;
-
 import android.app.Activity;
 import android.database.Cursor;
 import android.net.Uri;
@@ -28,6 +25,9 @@ import android.support.v4.app.ListFragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
+
+import com.conferenceengineer.android.iosched.conference686.R;
+import com.conferenceengineer.android.iosched.provider.ScheduleContract;
 
 /**
  * A retained, non-UI helper fragment that loads track information such as name, color, etc.

@@ -16,11 +16,6 @@
 
 package com.conferenceengineer.android.iosched.appwidget;
 
-import com.conferenceengineer.android.iosched.conference348.R;
-import com.conferenceengineer.android.iosched.sync.SyncHelper;
-import com.conferenceengineer.android.iosched.ui.HomeActivity;
-import com.conferenceengineer.android.iosched.ui.TaskStackBuilderProxyActivity;
-
 import android.annotation.TargetApi;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -31,6 +26,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.widget.RemoteViews;
+
+import com.conferenceengineer.android.iosched.conference686.R;
+import com.conferenceengineer.android.iosched.sync.SyncHelper;
+import com.conferenceengineer.android.iosched.ui.HomeActivity;
+import com.conferenceengineer.android.iosched.ui.TaskStackBuilderProxyActivity;
 
 import static com.conferenceengineer.android.iosched.util.LogUtils.makeLogTag;
 

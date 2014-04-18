@@ -47,7 +47,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.conferenceengineer.android.iosched.Config;
-import com.conferenceengineer.android.iosched.conference348.R;
+import com.conferenceengineer.android.iosched.conference686.R;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract;
 import com.conferenceengineer.android.iosched.ui.tablet.SessionsSandboxMultiPaneActivity;
 import com.conferenceengineer.android.iosched.util.PrefUtils;

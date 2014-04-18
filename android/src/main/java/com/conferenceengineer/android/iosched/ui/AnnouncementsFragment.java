@@ -16,11 +16,6 @@
 
 package com.conferenceengineer.android.iosched.ui;
 
-import com.conferenceengineer.android.iosched.conference348.R;
-import com.conferenceengineer.android.iosched.provider.ScheduleContract;
-import com.conferenceengineer.android.iosched.social.Tweet;
-import com.conferenceengineer.android.iosched.util.UIUtils;
-
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -38,10 +33,14 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.ListView;
 
+import com.conferenceengineer.android.iosched.conference686.R;
+import com.conferenceengineer.android.iosched.provider.ScheduleContract;
+import com.conferenceengineer.android.iosched.social.Tweet;
+import com.conferenceengineer.android.iosched.util.UIUtils;
+
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.conferenceengineer.android.iosched.util.LogUtils.LOGE;
 import static com.conferenceengineer.android.iosched.util.LogUtils.makeLogTag;
 
 /**

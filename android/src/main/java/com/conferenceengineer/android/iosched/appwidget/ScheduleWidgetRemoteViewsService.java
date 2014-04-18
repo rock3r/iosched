@@ -16,16 +16,6 @@
 
 package com.conferenceengineer.android.iosched.appwidget;
 
-import com.conferenceengineer.android.iosched.Config;
-import com.conferenceengineer.android.iosched.conference348.R;
-import com.conferenceengineer.android.iosched.provider.ScheduleContract;
-import com.conferenceengineer.android.iosched.ui.HomeActivity;
-import com.conferenceengineer.android.iosched.ui.SimpleSectionedListAdapter;
-import com.conferenceengineer.android.iosched.ui.SimpleSectionedListAdapter.Section;
-import com.conferenceengineer.android.iosched.ui.TaskStackBuilderProxyActivity;
-import com.conferenceengineer.android.iosched.util.PrefUtils;
-import com.conferenceengineer.android.iosched.util.UIUtils;
-
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
@@ -40,6 +30,16 @@ import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
+
+import com.conferenceengineer.android.iosched.Config;
+import com.conferenceengineer.android.iosched.conference686.R;
+import com.conferenceengineer.android.iosched.provider.ScheduleContract;
+import com.conferenceengineer.android.iosched.ui.HomeActivity;
+import com.conferenceengineer.android.iosched.ui.SimpleSectionedListAdapter;
+import com.conferenceengineer.android.iosched.ui.SimpleSectionedListAdapter.Section;
+import com.conferenceengineer.android.iosched.ui.TaskStackBuilderProxyActivity;
+import com.conferenceengineer.android.iosched.util.PrefUtils;
+import com.conferenceengineer.android.iosched.util.UIUtils;
 
 import java.util.ArrayList;
 import java.util.Formatter;

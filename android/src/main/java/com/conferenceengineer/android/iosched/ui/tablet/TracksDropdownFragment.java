@@ -16,11 +16,6 @@
 
 package com.conferenceengineer.android.iosched.ui.tablet;
 
-import com.conferenceengineer.android.iosched.conference348.R;
-import com.conferenceengineer.android.iosched.provider.ScheduleContract;
-import com.conferenceengineer.android.iosched.ui.TracksAdapter;
-import com.conferenceengineer.android.iosched.util.ParserUtils;
-
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.res.Resources;
@@ -38,11 +33,12 @@ import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ImageView;
-import android.widget.ListPopupWindow;
-import android.widget.PopupWindow;
-import android.widget.TextView;
+import android.widget.*;
+
+import com.conferenceengineer.android.iosched.conference686.R;
+import com.conferenceengineer.android.iosched.provider.ScheduleContract;
+import com.conferenceengineer.android.iosched.ui.TracksAdapter;
+import com.conferenceengineer.android.iosched.util.ParserUtils;
 
 /**
  * A tablet-specific fragment that is a giant {@link android.widget.Spinner}

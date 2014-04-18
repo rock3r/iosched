@@ -22,22 +22,25 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.conferenceengineer.android.iosched.conference348.R;
+import com.conferenceengineer.android.iosched.Config;
+import com.conferenceengineer.android.iosched.conference686.R;
 import com.conferenceengineer.android.iosched.io.model.SessionResponse;
 import com.conferenceengineer.android.iosched.io.model.SessionsResponse;
 import com.conferenceengineer.android.iosched.io.model.TrackResponse;
 import com.conferenceengineer.android.iosched.io.model.TracksResponse;
-import com.conferenceengineer.android.iosched.Config;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract.Sessions;
 import com.conferenceengineer.android.iosched.provider.ScheduleContract.SyncColumns;
 import com.conferenceengineer.android.iosched.provider.ScheduleDatabase;
-import com.conferenceengineer.android.iosched.util.*;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.conferenceengineer.android.iosched.util.Lists;
+import com.conferenceengineer.android.iosched.util.ParserUtils;
+import com.conferenceengineer.android.iosched.util.PrefUtils;
 
 import java.io.IOException;
 import java.util.*;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import static com.conferenceengineer.android.iosched.provider.ScheduleDatabase.SessionsSpeakers;
 import static com.conferenceengineer.android.iosched.util.LogUtils.*;

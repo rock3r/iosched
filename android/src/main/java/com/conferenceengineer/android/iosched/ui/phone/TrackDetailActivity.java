@@ -16,29 +16,27 @@
 
 package com.conferenceengineer.android.iosched.ui.phone;
 
-import android.view.Menu;
-import android.view.MenuItem;
-import com.conferenceengineer.android.iosched.conference348.R;
-import com.conferenceengineer.android.iosched.provider.ScheduleContract;
-import com.conferenceengineer.android.iosched.ui.*;
-import com.conferenceengineer.android.iosched.util.UIUtils;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
+import android.view.Menu;
+import android.view.MenuItem;
+
+import com.conferenceengineer.android.iosched.conference686.R;
+import com.conferenceengineer.android.iosched.provider.ScheduleContract;
+import com.conferenceengineer.android.iosched.ui.*;
+import com.conferenceengineer.android.iosched.util.UIUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.conferenceengineer.android.iosched.provider.ScheduleContract.Sessions.QUERY_PARAMETER_FILTER;
-import static com.conferenceengineer.android.iosched.provider.ScheduleContract.Sessions.QUERY_VALUE_FILTER_SESSIONS_CODELABS_ONLY;
-import static com.conferenceengineer.android.iosched.provider.ScheduleContract.Sessions.QUERY_VALUE_FILTER_OFFICE_HOURS_ONLY;
+import static com.conferenceengineer.android.iosched.provider.ScheduleContract.Sessions.*;
 import static com.conferenceengineer.android.iosched.util.LogUtils.LOGD;
 
 public class TrackDetailActivity extends BaseActivity implements

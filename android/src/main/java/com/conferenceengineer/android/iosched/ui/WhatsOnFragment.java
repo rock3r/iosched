@@ -16,12 +16,6 @@
 
 package com.conferenceengineer.android.iosched.ui;
 
-import com.conferenceengineer.android.iosched.Config;
-import com.conferenceengineer.android.iosched.conference348.R;
-import com.conferenceengineer.android.iosched.provider.ScheduleContract.Announcements;
-import com.conferenceengineer.android.iosched.util.TimeUtils;
-import com.conferenceengineer.android.iosched.util.UIUtils;
-
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.database.ContentObserver;
@@ -41,6 +35,12 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
+
+import com.conferenceengineer.android.iosched.Config;
+import com.conferenceengineer.android.iosched.conference686.R;
+import com.conferenceengineer.android.iosched.provider.ScheduleContract.Announcements;
+import com.conferenceengineer.android.iosched.util.TimeUtils;
+import com.conferenceengineer.android.iosched.util.UIUtils;
 
 /**
  * A fragment used in {@link HomeActivity} that shows either a countdown,
