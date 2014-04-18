@@ -16,6 +16,10 @@
 
 package com.conferenceengineer.android.iosched.io;
 
+import android.content.ContentProviderOperation;
+import android.content.Context;
+
+import com.conferenceengineer.android.iosched.Config;
 import com.conferenceengineer.android.iosched.io.model.Day;
 import com.conferenceengineer.android.iosched.io.model.EventSlots;
 import com.conferenceengineer.android.iosched.io.model.TimeSlot;
@@ -24,16 +28,12 @@ import com.conferenceengineer.android.iosched.provider.ScheduleContract.Blocks;
 import com.conferenceengineer.android.iosched.util.Lists;
 import com.conferenceengineer.android.iosched.util.ParserUtils;
 
-import android.content.ContentProviderOperation;
-import android.content.Context;
-import org.json.JSONObject;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static com.conferenceengineer.android.iosched.util.LogUtils.LOGE;
-import static com.conferenceengineer.android.iosched.util.LogUtils.LOGV;
-import static com.conferenceengineer.android.iosched.util.LogUtils.makeLogTag;
+import org.json.JSONObject;
+
+import static com.conferenceengineer.android.iosched.util.LogUtils.*;
 
 
 public class BlocksHandler extends JSONHandler {
@@ -88,8 +88,8 @@ public class BlocksHandler extends JSONHandler {
         if (slot.title != null) {
             title = slot.title;
         }
-        String startTime = date + "T" + start + ":00.000+01:00";
-        String endTime = date + "T" + end + ":00.000+01:00";
+        String startTime = date + "T" + start + ":00.000"+Config.CONFERENCE_TIME_ZONE_OFFSET;
+        String endTime = date + "T" + end + ":00.000"+Config.CONFERENCE_TIME_ZONE_OFFSET;
         LOGV(TAG, "startTime:" + startTime);
         long startTimeL = ParserUtils.parseTime(startTime);
         long endTimeL = ParserUtils.parseTime(endTime);
