@@ -159,18 +159,18 @@ public class WiFiUtils {
             ft.remove(prev);
         }
         ft.addToBackStack(null);
-        new WiFiDialog(isWiFiEnabled(activity)).show(ft, "dialog_wifi");
+
+        Bundle arguments = new Bundle();
+        arguments.putBoolean(WiFiDialog.WIFI_ENABLED_KEY, isWiFiEnabled(activity));
+        WiFiDialog wifiDialog = new WiFiDialog();
+        wifiDialog.setArguments(arguments);
+        wifiDialog.show(ft, "dialog_wifi");
     }
 
     public static class WiFiDialog extends DialogFragment {
-        private boolean mWiFiEnabled;
+        static final String WIFI_ENABLED_KEY = "wifi_enabled";
 
         public WiFiDialog() {}
-
-        public WiFiDialog(boolean wifiEnabled) {
-            super();
-            mWiFiEnabled = wifiEnabled;
-        }
 
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -179,7 +179,8 @@ public class WiFiUtils {
             final TextView wifiTextView = new TextView(getActivity());
             int dialogCallToActionText;
             int dialogPositiveButtonText;
-            if (mWiFiEnabled) {
+            final boolean wifiEnabled = getArguments().getBoolean(WIFI_ENABLED_KEY, false);
+            if (wifiEnabled) {
                 dialogCallToActionText = R.string.calltoaction_wifi_configure;
                 dialogPositiveButtonText = R.string.wifi_dialog_button_configure;
             } else {
@@ -199,7 +200,7 @@ public class WiFiUtils {
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int whichButton) {
                                     // Attempt to configure the Wi-Fi access point.
-                                    if (mWiFiEnabled) {
+                                    if (wifiEnabled) {
                                         installConferenceWiFi(context);
                                         if (WiFiUtils.isWiFiApConfigured(context)) {
                                             WiFiUtils.setWiFiConfigStatus(
