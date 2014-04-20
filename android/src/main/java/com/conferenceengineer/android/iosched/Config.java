@@ -30,9 +30,10 @@ public class Config {
 
     // Conference times
     public static final TimeZone CONFERENCE_TIME_ZONE = TimeZone.getTimeZone("Europe/Amsterdam");
+    public static final String CONFERENCE_TIME_ZONE_OFFSET = "+03:00";
 
-    public static final long CONFERENCE_START_MILLIS = ParserUtils.parseTime("2013-11-25T08:30:00.000+01:00");
-    public static final long CONFERENCE_END_MILLIS = ParserUtils.parseTime("2013-11-26T16:15:00.000+01:00");
+    public static final long CONFERENCE_START_MILLIS = ParserUtils.parseTime("2014-05-16T10:00:00.000" + CONFERENCE_TIME_ZONE_OFFSET);
+    public static final long CONFERENCE_END_MILLIS = ParserUtils.parseTime("2014-05-17T17:30:00.000" + CONFERENCE_TIME_ZONE_OFFSET);
 
     // The base URL for event data
     public static final String DATA_ROOT = INSERT_UPDATE_URL;
