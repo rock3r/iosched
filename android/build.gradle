@@ -21,17 +21,23 @@ repositories {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:19.0.+'
+    compile 'com.android.support:appcompat-v7:19.+'
     compile 'com.google.android.apps.dashclock:dashclock-api:+'
     compile fileTree(dir: 'libs', include: '*.jar')
 }
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "19.0.1"
+    buildToolsVersion "19.0.3"
 
     defaultConfig {
         minSdkVersion 10
         targetSdkVersion 18
+    }
+
+    buildTypes {
+        release {
+            runProguard true
+        }
     }
 }
