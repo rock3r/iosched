@@ -91,6 +91,18 @@
   public ** get*();
 }
 
+-keepclassmembers class * extends com.conferenceengineer.android.iosched.io.ServerArrayResponse {
+  public <init>();
+  public void set*(%);
+  public void set*(**);
+  public ** set*(%);
+  public ** set*(**);
+  public % set*(%);
+  public % set*(**);
+  public % get*();
+  public ** get*();
+}
+
 -keepclassmembers class * extends com.conferenceengineer.android.iosched.io.ServerRequest {
   public % get*();
   public ** get*();
