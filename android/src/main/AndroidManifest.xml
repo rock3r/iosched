@@ -114,7 +114,7 @@
         <activity
             android:name="com.conferenceengineer.android.iosched.ui.SettingsActivity"
             android:label="@string/title_settings"
-            android:theme="@style/Theme.IOSched"
+            android:theme="@style/Theme.IOSched.Settings"
             android:parentActivityName="com.conferenceengineer.android.iosched.ui.HomeActivity">
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.conferenceengineer.android.iosched.ui.HomeActivity" />
