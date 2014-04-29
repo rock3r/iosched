@@ -105,8 +105,8 @@
         <item name="backgroundSplit">@drawable/actionbar_split_background</item>
         <item name="android:backgroundStacked">@drawable/actionbar_stacked_background</item>
         <item name="backgroundStacked">@drawable/actionbar_stacked_background</item>
-        <item name="android:icon">@drawable/actionbar_icon</item>
-        <item name="icon">@drawable/actionbar_icon</item>
+        <item name="android:icon">@drawable/conference_actionbar_icon</item>
+        <item name="icon">@drawable/conference_actionbar_icon</item>
         <item name="android:displayOptions">showHome|homeAsUp|showTitle</item>
         <item name="displayOptions">showHome|homeAsUp|showTitle</item>
         <item name="android:titleTextStyle">@style/ActionBar.TitleText</item>

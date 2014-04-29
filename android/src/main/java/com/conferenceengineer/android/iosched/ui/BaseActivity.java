@@ -61,7 +61,7 @@ public abstract class BaseActivity extends ActionBarActivity {
      */
     protected void setActionBarTrackIcon(String trackName, int trackColor) {
         if (trackColor == 0) {
-            getSupportActionBar().setIcon(R.drawable.actionbar_icon);
+            getSupportActionBar().setIcon(R.drawable.conference_actionbar_icon);
             return;
         }
 
