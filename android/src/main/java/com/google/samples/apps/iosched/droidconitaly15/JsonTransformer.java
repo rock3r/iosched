@@ -17,6 +17,7 @@ import com.google.samples.apps.iosched.io.model.Room;
 import com.google.samples.apps.iosched.io.model.Session;
 import com.google.samples.apps.iosched.io.model.Speaker;
 import com.google.samples.apps.iosched.io.model.Tag;
+import com.google.samples.apps.iosched.provider.ScheduleContract;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -24,10 +25,13 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 import java.util.TimeZone;
 
 import static com.google.samples.apps.iosched.sync.ConferenceDataHandler.DATA_KEY_BLOCKS;
@@ -37,6 +41,16 @@ import static com.google.samples.apps.iosched.sync.ConferenceDataHandler.DATA_KE
 import static com.google.samples.apps.iosched.sync.ConferenceDataHandler.DATA_KEY_TAGS;
 
 public final class JsonTransformer {
+
+    private static final Set<String> EXCLUDE_SESSIONS;
+
+    static {
+        EXCLUDE_SESSIONS = new HashSet<>();
+        EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/welcome-2/");
+        EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/barcamp-organization-2/");
+        EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/droidcon-party/");
+        EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/chiusura/");
+    }
 
     private static final ThreadLocal<DateFormat> DATE_PARSER = new ThreadLocal<DateFormat>() {
 
@@ -121,6 +135,9 @@ public final class JsonTransformer {
                     reader.skipValue();
                 }
             }
+
+            addBlocksManually(blocks);
+
         } catch (JsonParseException | ParseException | IOException e) {
             if (BuildConfig.DEBUG) {
                 Log.w("JsonTransformer", "Error while transforming Json.", e);
@@ -148,7 +165,11 @@ public final class JsonTransformer {
             @NonNull Map<String, Room> rooms,
             @NonNull Map<String, Tag> tags,
             @NonNull List<Block> blocks,
-            @NonNull List<Session> sessions) throws ParseException {
+            @NonNull List<Session> sessions)
+            throws ParseException {
+
+        if (EXCLUDE_SESSIONS.contains(di15Session.url)) return;
+
         final boolean isKeynote = "keynote".equals(di15Session.post_title.trim().toLowerCase());
 
         // *** SPEAKERS ***
@@ -224,23 +245,98 @@ public final class JsonTransformer {
                         dateParser, dateFormatterSessions);
 
         sessions.add(session);
+    }
 
-        // *** BLOCKS ***
+    private static void addBlocksManually(@NonNull Collection<Block> blocks)
+            throws ParseException {
 
-        ////TODO find a way to distinguish blocks from sessions!
+        final DateFormat dateParser = DATE_PARSER.get();
+        final DateFormat dateFormatterBlocks = DATE_FORMATTER_BLOCKS.get();
+        String day;
 
-        //final DateFormat dateFormatterBlocks = DATE_FORMATTER_BLOCKS.get();
-        //final Block block = new Block();
-        //block.start =
-        //        convertDateTime(di15Session.date, di15Session.time,
-        //                dateParser, dateFormatterBlocks);
-        //block.end =
-        //        convertDateTime(di15Session.date, di15Session.end_time,
-        //                dateParser, dateFormatterBlocks);
-        //block.title = session.title;
-        //block.subtitle = roomName;
-        //block.type = ScheduleContract.Blocks.BLOCK_TYPE_BREAK;
-        //blocks.add(block);
+        day = "9 April 2015";
+
+        addBlock("Welcome", "Sala 500", day, "09:15", "09:50", false,
+                dateParser, dateFormatterBlocks, blocks);
+        addBlock("Barcamp organization", "Sala 500", day, "10:30", "10:50", false,
+                dateParser, dateFormatterBlocks, blocks);
+
+        addBlock("", "", day, "11:00", "12:00", true,
+                dateParser, dateFormatterBlocks, blocks);
+        addBlock("", "", day, "12:00", "12:50", true,
+                dateParser, dateFormatterBlocks, blocks);
+        addBlock("", "", day, "12:50", "13:30", true,
+                dateParser, dateFormatterBlocks, blocks);
+
+        addBlock("Lunch", "", day, "13:30", "14:30", false,
+                dateParser, dateFormatterBlocks, blocks);
+
+        addBlock("", "", day, "14:30", "15:10", true,
+                dateParser, dateFormatterBlocks, blocks);
+        addBlock("", "", day, "15:10", "16:10", true,
+                dateParser, dateFormatterBlocks, blocks);
+        addBlock("", "", day, "16:10", "17:10", true,
+                dateParser, dateFormatterBlocks, blocks);
+        addBlock("", "", day, "17:10", "18:00", true,
+                dateParser, dateFormatterBlocks, blocks);
+        addBlock("", "", day, "18:00", "19:00", true,
+                dateParser, dateFormatterBlocks, blocks);
+
+        addBlock("Droidcon Party!", "Caffè del Progresso", day, "19:00", "23:00", false,
+                dateParser, dateFormatterBlocks, blocks);
+
+        day = "10 April 2015";
+
+        addBlock("", "", day, "09:00", "09:50", true,
+                dateParser, dateFormatterBlocks, blocks);
+        addBlock("", "", day, "09:50", "10:30", true,
+                dateParser, dateFormatterBlocks, blocks);
+        addBlock("", "", day, "10:30", "11:40", true,
+                dateParser, dateFormatterBlocks, blocks);
+        addBlock("", "", day, "11:40", "12:20", true,
+                dateParser, dateFormatterBlocks, blocks);
+        addBlock("", "", day, "12:20", "13:00", true,
+                dateParser, dateFormatterBlocks, blocks);
+
+        addBlock("Lunch", "", day, "13:00", "14:00", false,
+                dateParser, dateFormatterBlocks, blocks);
+
+        addBlock("", "", day, "14:00", "14:50", true,
+                dateParser, dateFormatterBlocks, blocks);
+        addBlock("", "", day, "14:50", "15:40", true,
+                dateParser, dateFormatterBlocks, blocks);
+        addBlock("", "", day, "15:40", "16:40", true,
+                dateParser, dateFormatterBlocks, blocks);
+        addBlock("", "", day, "16:40", "17:30", true,
+                dateParser, dateFormatterBlocks, blocks);
+        addBlock("", "", day, "17:30", "18:20", true,
+                dateParser, dateFormatterBlocks, blocks);
+
+        addBlock("Closing ceremony", "Sala Londra", day, "18:20", "18:40", false,
+                dateParser, dateFormatterBlocks, blocks);
+    }
+
+    private static void addBlock(
+            @NonNull String title,
+            @NonNull String subtitle,
+            @NonNull String date,
+            @NonNull String startTime,
+            @NonNull String endTime,
+            boolean freeOrBreak,
+            @NonNull DateFormat dateParser,
+            @NonNull DateFormat dateFormatter,
+            @NonNull Collection<Block> blocks)
+            throws ParseException {
+
+        final Block block = new Block();
+        block.start = convertDateTime(date, startTime, dateParser, dateFormatter);
+        block.end = convertDateTime(date, endTime, dateParser, dateFormatter);
+        block.title = title;
+        block.subtitle = subtitle;
+        block.type = freeOrBreak
+                ? ScheduleContract.Blocks.BLOCK_TYPE_FREE
+                : ScheduleContract.Blocks.BLOCK_TYPE_BREAK;
+        blocks.add(block);
     }
 
     @Nullable
