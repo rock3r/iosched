@@ -50,12 +50,24 @@ public final class JsonTransformer {
         }
     };
 
-    private static final ThreadLocal<DateFormat> DATE_FORMATTER = new ThreadLocal<DateFormat>() {
+    private static final ThreadLocal<DateFormat> DATE_FORMATTER_SESSIONS = new ThreadLocal<DateFormat>() {
 
         @Override
         protected DateFormat initialValue() {
-            // "2014-06-26T23:00:00.000Z"
-            final String format = "yyyy-MM-dd'T'kk:mm:ss.SSS'Z'";
+            // "2014-06-26T00:00:00Z"
+            final String format = "yyyy-MM-dd'T'HH:mm:ss'Z'";
+            final DateFormat dateFormatter = new SimpleDateFormat(format, Locale.US);
+            dateFormatter.setTimeZone(TimeZone.getTimeZone("UTC"));
+            return dateFormatter;
+        }
+    };
+
+    private static final ThreadLocal<DateFormat> DATE_FORMATTER_BLOCKS = new ThreadLocal<DateFormat>() {
+
+        @Override
+        protected DateFormat initialValue() {
+            // "2014-06-26T00:00:00.000Z"
+            final String format = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
             final DateFormat dateFormatter = new SimpleDateFormat(format, Locale.US);
             dateFormatter.setTimeZone(TimeZone.getTimeZone("UTC"));
             return dateFormatter;
@@ -203,19 +215,26 @@ public final class JsonTransformer {
 
         // timestamps
         final DateFormat dateParser = DATE_PARSER.get();
-        final DateFormat dateFormatter = DATE_FORMATTER.get();
+        final DateFormat dateFormatterSessions = DATE_FORMATTER_SESSIONS.get();
         session.startTimestamp =
-                convertDateTime(di15Session.date, di15Session.time, dateParser, dateFormatter);
+                convertDateTime(di15Session.date, di15Session.time,
+                        dateParser, dateFormatterSessions);
         session.endTimestamp =
-                convertDateTime(di15Session.date, di15Session.end_time, dateParser, dateFormatter);
+                convertDateTime(di15Session.date, di15Session.end_time,
+                        dateParser, dateFormatterSessions);
 
         sessions.add(session);
 
         // *** BLOCKS ***
 
+        final DateFormat dateFormatterBlocks = DATE_FORMATTER_BLOCKS.get();
         final Block block = new Block();
-        block.start = session.startTimestamp;
-        block.end = session.endTimestamp;
+        block.start =
+                convertDateTime(di15Session.date, di15Session.time,
+                        dateParser, dateFormatterBlocks);
+        block.end =
+                convertDateTime(di15Session.date, di15Session.end_time,
+                        dateParser, dateFormatterBlocks);
         block.title = session.title;
         block.subtitle = roomName;
         block.type = ScheduleContract.Blocks.BLOCK_TYPE_BREAK;
