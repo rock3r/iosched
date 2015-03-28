@@ -16,7 +16,6 @@ import com.google.samples.apps.iosched.io.model.Room;
 import com.google.samples.apps.iosched.io.model.Session;
 import com.google.samples.apps.iosched.io.model.Speaker;
 import com.google.samples.apps.iosched.io.model.Tag;
-import com.google.samples.apps.iosched.provider.ScheduleContract;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -227,18 +226,20 @@ public final class JsonTransformer {
 
         // *** BLOCKS ***
 
-        final DateFormat dateFormatterBlocks = DATE_FORMATTER_BLOCKS.get();
-        final Block block = new Block();
-        block.start =
-                convertDateTime(di15Session.date, di15Session.time,
-                        dateParser, dateFormatterBlocks);
-        block.end =
-                convertDateTime(di15Session.date, di15Session.end_time,
-                        dateParser, dateFormatterBlocks);
-        block.title = session.title;
-        block.subtitle = roomName;
-        block.type = ScheduleContract.Blocks.BLOCK_TYPE_BREAK;
-        blocks.add(block);
+        ////TODO find a way to distinguish blocks from sessions!
+
+        //final DateFormat dateFormatterBlocks = DATE_FORMATTER_BLOCKS.get();
+        //final Block block = new Block();
+        //block.start =
+        //        convertDateTime(di15Session.date, di15Session.time,
+        //                dateParser, dateFormatterBlocks);
+        //block.end =
+        //        convertDateTime(di15Session.date, di15Session.end_time,
+        //                dateParser, dateFormatterBlocks);
+        //block.title = session.title;
+        //block.subtitle = roomName;
+        //block.type = ScheduleContract.Blocks.BLOCK_TYPE_BREAK;
+        //blocks.add(block);
     }
 
     @Nullable
