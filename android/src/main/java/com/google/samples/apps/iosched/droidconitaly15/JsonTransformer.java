@@ -44,7 +44,7 @@ public final class JsonTransformer {
             // "9 April 2015 11:00"
             final String format = "d MMMM yyyy kk:mm";
             final DateFormat dateParser = new SimpleDateFormat(format, Locale.US);
-            dateParser.setTimeZone(TimeZone.getTimeZone("Rome"));
+            dateParser.setTimeZone(TimeZone.getTimeZone("Europe/Rome"));
             return dateParser;
         }
     };
