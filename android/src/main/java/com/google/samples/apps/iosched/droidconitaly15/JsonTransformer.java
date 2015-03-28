@@ -54,7 +54,7 @@ public final class JsonTransformer {
         @Override
         protected DateFormat initialValue() {
             // "2014-06-26T23:00:00.000Z"
-            final String format = "yyyy-MM-dd'T'kk:mm:ss.S'Z'";
+            final String format = "yyyy-MM-dd'T'kk:mm:ss.SSS'Z'";
             final DateFormat dateFormatter = new SimpleDateFormat(format, Locale.US);
             dateFormatter.setTimeZone(TimeZone.getTimeZone("UTC"));
             return dateFormatter;
