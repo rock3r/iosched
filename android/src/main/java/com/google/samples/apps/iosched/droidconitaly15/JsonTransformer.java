@@ -9,6 +9,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import com.google.gson.stream.JsonReader;
 import com.google.samples.apps.iosched.BuildConfig;
+import com.google.samples.apps.iosched.Config;
 import com.google.samples.apps.iosched.droidconitaly15.model.DI15Session;
 import com.google.samples.apps.iosched.droidconitaly15.model.DI15Speaker;
 import com.google.samples.apps.iosched.io.model.Block;
@@ -148,6 +149,7 @@ public final class JsonTransformer {
             @NonNull Map<String, Tag> tags,
             @NonNull List<Block> blocks,
             @NonNull List<Session> sessions) throws ParseException {
+        final boolean isKeynote = "keynote".equals(di15Session.post_title.trim().toLowerCase());
 
         // *** SPEAKERS ***
 
@@ -181,15 +183,15 @@ public final class JsonTransformer {
 
         // *** TAGS ***
 
-        final List<String> di15Tags = di15Session.track;
-        if (di15Tags != null) {
-            for (String di15tag : di15Tags) {
-                if (!tags.containsKey(di15tag)) {
-                    final Tag tag = new Tag();
-                    tag.category = "TOPIC";
-                    tag.name = di15tag;
-                    tag.tag = di15tag;
-                }
+        final List<String> di15Tags =
+                di15Session.track != null ? di15Session.track : new ArrayList<String>();
+        if (isKeynote) di15Tags.add(Config.Tags.SPECIAL_KEYNOTE);
+        for (String di15tag : di15Tags) {
+            if (!tags.containsKey(di15tag)) {
+                final Tag tag = new Tag();
+                tag.category = "TOPIC";
+                tag.name = di15tag;
+                tag.tag = di15tag;
             }
         }
 
@@ -201,8 +203,7 @@ public final class JsonTransformer {
         session.description = di15Session.content;
         session.url = di15Session.url;
         session.room = roomName;
-        session.tags =
-                di15Tags == null ? new String[0] : di15Tags.toArray(new String[di15Tags.size()]);
+        session.tags = di15Tags.toArray(new String[di15Tags.size()]);
 
         // speakers
         final int size = di15speakers == null ? 0 : di15speakers.size();
