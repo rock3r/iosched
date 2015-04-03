@@ -79,7 +79,6 @@ import com.google.samples.apps.iosched.ui.widget.ScrimInsetsScrollView;
 import com.google.samples.apps.iosched.ui.widget.SwipeRefreshLayout;
 import com.google.samples.apps.iosched.util.AccountUtils;
 import com.google.samples.apps.iosched.util.AnalyticsManager;
-import com.google.samples.apps.iosched.util.HelpUtils;
 import com.google.samples.apps.iosched.util.ImageLoader;
 import com.google.samples.apps.iosched.util.LUtils;
 import com.google.samples.apps.iosched.util.LoginAndAuthHelper;
@@ -735,17 +734,17 @@ public abstract class BaseActivity extends ActionBarActivity implements
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
-            case R.id.menu_about:
-                HelpUtils.showAbout(this);
-                return true;
+            //case R.id.menu_about:
+            //    HelpUtils.showAbout(this);
+            //    return true;
 
             case R.id.menu_wifi:
                 WiFiUtils.showWiFiDialog(this);
                 return true;
 
-            case R.id.menu_i_o_hunt:
-                launchIoHunt();
-                return true;
+            //case R.id.menu_i_o_hunt:
+            //    launchIoHunt();
+            //    return true;
 
             case R.id.menu_debug:
                 if (BuildConfig.DEBUG) {
@@ -757,10 +756,10 @@ public abstract class BaseActivity extends ActionBarActivity implements
                 requestDataRefresh();
                 break;
 
-            case R.id.menu_io_extended:
-                startActivity(new Intent(Intent.ACTION_VIEW,
-                        Uri.parse(Config.IO_EXTENDED_LINK)));
-                break;
+            //case R.id.menu_io_extended:
+            //    startActivity(new Intent(Intent.ACTION_VIEW,
+            //            Uri.parse(Config.IO_EXTENDED_LINK)));
+            //    break;
 
             case R.id.menu_map:
                 startActivity(new Intent(this, UIUtils.getMapActivityClass(this)));
@@ -910,10 +909,10 @@ public abstract class BaseActivity extends ActionBarActivity implements
             debugItem.setVisible(false);
         }
 
-        MenuItem ioExtendedItem = menu.findItem(R.id.menu_io_extended);
-        if (ioExtendedItem != null) {
-            ioExtendedItem.setVisible(false);
-        }
+        //MenuItem ioExtendedItem = menu.findItem(R.id.menu_io_extended);
+        //if (ioExtendedItem != null) {
+        //    ioExtendedItem.setVisible(false);
+        //}
 
         // if attendee is remote, show map on the overflow instead of on the nav bar
         final boolean isRemote = !PrefUtils.isAttendeeAtVenue(this);
@@ -939,10 +938,10 @@ public abstract class BaseActivity extends ActionBarActivity implements
             mapItem.setVisible(isRemote && canSupportLocationMapViewing);
         }
 
-        MenuItem ioHuntItem = menu.findItem(R.id.menu_i_o_hunt);
-        if (ioHuntItem != null) {
-            ioHuntItem.setVisible(false);
-        }
+        //MenuItem ioHuntItem = menu.findItem(R.id.menu_i_o_hunt);
+        //if (ioHuntItem != null) {
+        //    ioHuntItem.setVisible(false);
+        //}
 
     }
 

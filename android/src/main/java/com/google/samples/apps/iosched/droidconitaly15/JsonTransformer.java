@@ -2,6 +2,7 @@ package com.google.samples.apps.iosched.droidconitaly15;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.text.Html;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -180,9 +181,9 @@ public final class JsonTransformer {
                 if (!speakers.containsKey(di15Speaker.speaker_id)) {
                     final Speaker speaker = new Speaker();
                     speaker.id = di15Speaker.speaker_id;
-                    speaker.name = di15Speaker.post_title;
-                    speaker.company = di15Speaker.header;
-                    speaker.bio = di15Speaker.bio;
+                    speaker.name = escapeHtml(di15Speaker.post_title);
+                    speaker.company = escapeHtml(di15Speaker.header);
+                    speaker.bio = escapeHtml(di15Speaker.bio);
                     speaker.thumbnailUrl = di15Speaker.post_image;
                     speaker.plusoneUrl = di15Speaker.url;
                     speakers.put(speaker.id, speaker);
@@ -192,7 +193,7 @@ public final class JsonTransformer {
 
         // *** ROOMS ***
 
-        final String roomName = di15Session.location;
+        final String roomName = escapeHtml(di15Session.location);
         if (roomName != null) {
             if (!rooms.containsKey(roomName)) {
                 final Room room = new Room();
@@ -220,8 +221,8 @@ public final class JsonTransformer {
 
         final Session session = new Session();
         session.id = di15Session.url;
-        session.title = di15Session.post_title;
-        session.description = di15Session.content;
+        session.title = escapeHtml(di15Session.post_title);
+        session.description = escapeHtml(di15Session.content);
         session.url = di15Session.url;
         session.room = roomName;
         session.tags = di15Tags.toArray(new String[di15Tags.size()]);
@@ -349,5 +350,14 @@ public final class JsonTransformer {
 
         time = time.replace('.', ':');
         return dateFormatter.format(dateParser.parse(date + " " + time));
+    }
+
+    /**
+     * From html to plain text, yo.
+     */
+    @Nullable
+    private static String escapeHtml(@Nullable String html)
+    {
+        return html == null ? null : Html.fromHtml(html).toString(); // THE HORROR
     }
 }
