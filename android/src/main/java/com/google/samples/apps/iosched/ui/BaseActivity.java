@@ -270,19 +270,17 @@ public abstract class BaseActivity extends ActionBarActivity implements
     private void trySetupSwipeRefresh() {
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
         if (mSwipeRefreshLayout != null) {
-//            mSwipeRefreshLayout.setColorScheme(
-//                    R.color.refresh_progress_1,
-//                    R.color.refresh_progress_2,
-//                    R.color.refresh_progress_3,
-//                    R.color.refresh_progress_4);
-//            mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-//                @Override
-//                public void onRefresh() {
-//                    requestDataRefresh();
-//                }
-//            });
-
-            mSwipeRefreshLayout.setEnabled(false);
+            mSwipeRefreshLayout.setColorScheme(
+                    R.color.refresh_progress_1,
+                    R.color.refresh_progress_2,
+                    R.color.refresh_progress_3,
+                    R.color.refresh_progress_4);
+            mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                @Override
+                public void onRefresh() {
+                    requestDataRefresh();
+                }
+            });
 
             if (mSwipeRefreshLayout instanceof MultiSwipeRefreshLayout) {
                 MultiSwipeRefreshLayout mswrl = (MultiSwipeRefreshLayout) mSwipeRefreshLayout;
