@@ -492,7 +492,7 @@ public class BrowseSessionsActivity extends BaseActivity implements SessionsFrag
             menu.removeItem(R.id.menu_refresh);
 //            menu.removeItem(R.id.menu_wifi);
             menu.removeItem(R.id.menu_debug);
-            menu.removeItem(R.id.menu_about);
+            //menu.removeItem(R.id.menu_about);
         } else {
             configureStandardMenuItems(menu);
         }
