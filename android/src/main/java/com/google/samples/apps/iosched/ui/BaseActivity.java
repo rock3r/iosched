@@ -902,19 +902,19 @@ public abstract class BaseActivity extends ActionBarActivity implements
     }
 
     protected void configureStandardMenuItems(Menu menu) {
-        MenuItem wifiItem = menu.findItem(R.id.menu_wifi);
-        if (wifiItem != null && !WiFiUtils.shouldOfferToSetupWifi(this, false)) {
-            wifiItem.setVisible(false);
-        }
+//        MenuItem wifiItem = menu.findItem(R.id.menu_wifi);
+//        if (wifiItem != null && !WiFiUtils.shouldOfferToSetupWifi(this, false)) {
+//            wifiItem.setVisible(false);
+//        }
 
         MenuItem debugItem = menu.findItem(R.id.menu_debug);
         if (debugItem != null) {
-            debugItem.setVisible(BuildConfig.DEBUG);
+            debugItem.setVisible(false);
         }
 
         MenuItem ioExtendedItem = menu.findItem(R.id.menu_io_extended);
         if (ioExtendedItem != null) {
-            ioExtendedItem.setVisible(PrefUtils.shouldOfferIOExtended(this, false));
+            ioExtendedItem.setVisible(false);
         }
 
         // if attendee is remote, show map on the overflow instead of on the nav bar
@@ -943,7 +943,7 @@ public abstract class BaseActivity extends ActionBarActivity implements
 
         MenuItem ioHuntItem = menu.findItem(R.id.menu_i_o_hunt);
         if (ioHuntItem != null) {
-            ioHuntItem.setVisible(!isRemote && !TextUtils.isEmpty(Config.IO_HUNT_PACKAGE_NAME));
+            ioHuntItem.setVisible(false);
         }
 
     }
