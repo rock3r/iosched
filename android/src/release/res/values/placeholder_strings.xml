@@ -16,15 +16,15 @@
 -->
 
 <resources>
-    <string name="placeholder_session_day"></string>
-    <string name="placeholder_session_start_time"></string>
-    <string name="placeholder_session_end_time"></string>
-    <string name="placeholder_session_title"></string>
-    <string name="placeholder_session_subtitle"></string>
-    <string name="placeholder_session_subtitle_and_abstract"></string>
-    <string name="placeholder_session_blurb"></string>
-    <string name="placeholder_lorem_ipsum"></string>
-    <string name="placeholder_button_label_1"></string>
-    <string name="placeholder_button_label_2"></string>
+    <string name="placeholder_session_day" translatable="false"></string>
+    <string name="placeholder_session_start_time" translatable="false"></string>
+    <string name="placeholder_session_end_time" translatable="false"></string>
+    <string name="placeholder_session_title" translatable="false"></string>
+    <string name="placeholder_session_subtitle" translatable="false"></string>
+    <string name="placeholder_session_subtitle_and_abstract" translatable="false"></string>
+    <string name="placeholder_session_blurb" translatable="false"></string>
+    <string name="placeholder_lorem_ipsum" translatable="false"></string>
+    <string name="placeholder_button_label_1" translatable="false"></string>
+    <string name="placeholder_button_label_2" translatable="false"></string>
 </resources>
 

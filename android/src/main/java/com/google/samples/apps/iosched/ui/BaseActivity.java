@@ -270,17 +270,19 @@ public abstract class BaseActivity extends ActionBarActivity implements
     private void trySetupSwipeRefresh() {
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
         if (mSwipeRefreshLayout != null) {
-            mSwipeRefreshLayout.setColorScheme(
-                    R.color.refresh_progress_1,
-                    R.color.refresh_progress_2,
-                    R.color.refresh_progress_3,
-                    R.color.refresh_progress_4);
-            mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-                @Override
-                public void onRefresh() {
-                    requestDataRefresh();
-                }
-            });
+//            mSwipeRefreshLayout.setColorScheme(
+//                    R.color.refresh_progress_1,
+//                    R.color.refresh_progress_2,
+//                    R.color.refresh_progress_3,
+//                    R.color.refresh_progress_4);
+//            mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//                @Override
+//                public void onRefresh() {
+//                    requestDataRefresh();
+//                }
+//            });
+
+            mSwipeRefreshLayout.setEnabled(false);
 
             if (mSwipeRefreshLayout instanceof MultiSwipeRefreshLayout) {
                 MultiSwipeRefreshLayout mswrl = (MultiSwipeRefreshLayout) mSwipeRefreshLayout;
@@ -471,11 +473,11 @@ public abstract class BaseActivity extends ActionBarActivity implements
 
         // Other items that are always in the nav drawer irrespective of whether the
         // attendee is on-site or remote:
-        mNavDrawerItems.add(NAVDRAWER_ITEM_SOCIAL);
+        //mNavDrawerItems.add(NAVDRAWER_ITEM_SOCIAL);
         if(BuildConfig.HAS_VIDEO_LIBRARY) {
             mNavDrawerItems.add(NAVDRAWER_ITEM_VIDEO_LIBRARY);
         }
-        mNavDrawerItems.add(NAVDRAWER_ITEM_SEPARATOR_SPECIAL);
+        //mNavDrawerItems.add(NAVDRAWER_ITEM_SEPARATOR_SPECIAL);
         mNavDrawerItems.add(NAVDRAWER_ITEM_SETTINGS);
 
         createNavDrawerItems();

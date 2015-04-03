@@ -22,10 +22,10 @@
         android:title="@string/description_search"
         iosched:showAsAction="always" />
 
-    <item android:id="@+id/menu_refresh"
-        android:orderInCategory="1"
-        android:title="@string/description_refresh"
-        iosched:showAsAction="never" />
+    <!--<item android:id="@+id/menu_refresh"-->
+        <!--android:orderInCategory="1"-->
+        <!--android:title="@string/description_refresh"-->
+        <!--iosched:showAsAction="never" />-->
 
     <item android:id="@+id/menu_wifi"
         android:orderInCategory="98"

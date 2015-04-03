@@ -94,7 +94,7 @@
     <string name="all_years">All Years</string>
 
     <!-- Name of the application, shown in the application's title bar. -->
-    <string name="app_name">Google I/O 2014</string>
+    <string name="app_name" translatable="false">Google I/O 2014</string>
 
     <!-- Label on a button that is one possible answer to the question "Are you attending the
     conference in person in San Francisco or remotely via livestream?" -->
@@ -312,7 +312,7 @@
     If using multiple lines, separate them with "\n" ("Tentar\nde novo" for example)
     -->
     <string name="login_failed_text_retry">Retry</string>
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="lorem_ipsum" translatable="false">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
 
     <!-- Message shown in a popup to request a mandatory upgrade -->
     <string name="mandatory_update_error">Your application is out of date. You must upgrade it to continue to use it.</string>
@@ -473,7 +473,7 @@
     <string name="others">Others</string>
 
     <!-- Header for a dialog listing event partners -->
-    <string name="partners">Partners</string>
+    <string name="partners" translatable="false">Partners</string>
 
     <!-- Menu item that, when clicked, causes an entry to be deleted in the People I've Met screen -->
     <string name="people_ive_met_delete">Delete</string>
@@ -482,7 +482,7 @@
     <string name="people_ive_met_delete_confirmation">Are you sure you want to delete this person from the list?</string>
 
     <!-- Title of a dialog box where the user can enter their own notes about a given person they have met. -->
-    <string name="people_ive_met_edit_note_title_with_name">Notes about <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="people_ive_met_edit_note_title_with_name" translatable="false">Notes about <xliff:g id="name">%1$s</xliff:g></string>
 
     <!-- Title of a dialog box where the user can enter their own notes about a given person they have met. -->
     <string name="people_ive_met_edit_note_title">Notes</string>
@@ -835,12 +835,12 @@
 
     <!-- Toast failure message if the user's wifi couldn't be updated -->
     <string name="wifi_install_error_message">Sorry, unable to update WiFi configuration</string>
-    <string name="description_i_o_hunt">I/O Hunt</string>
+    <string name="description_i_o_hunt" translatable="false">I/O Hunt</string>
 
     <!-- Number of retweets -->
-    <string name="tweet_retweets">%d RT</string>
-    <string name="twitter_stream_error">Couldn\'t load the Twitter feed.</string>
-    <string name="empty_twitter_stream">No posts found.</string>
-    <string name="description_compose">New post</string>
+    <string name="tweet_retweets" translatable="false">%d RT</string>
+    <string name="twitter_stream_error" translatable="false">Couldn\'t load the Twitter feed.</string>
+    <string name="empty_twitter_stream" translatable="false">No posts found.</string>
+    <string name="description_compose" translatable="false">New post</string>
 </resources>
 
