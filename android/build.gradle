@@ -183,7 +183,7 @@ android {
 
         droidconit {
             applicationId = "com.conferenceengineer.android.iosched.droidconit2015"
-            uniqueContentIdentifier = "droidconit"
+            uniqueContentIdentifier = "droidconit2015"
             manifestPlaceholders = [
                     uniqueContentIdentifier:uniqueContentIdentifier,
                     mapsApiKey:droidconit15_android_maps_api_key
@@ -200,7 +200,7 @@ android {
             buildConfigField "double", "VENUE_CAMERA_LONGITUDE", "7.664791"
 
             buildConfigField "String", "CONFERENCE_NAME", "\"Droidcon Italy 2015\""
-            buildConfigField "String", "CONFERENCE_DATA_MANIFEST_URL", "\""+droidconit15_android_manifest+"\""
+            buildConfigField "String", "CONFERENCE_DATA_MANIFEST_URL", "\"http://it.droidcon.com/2015/wp-content/uploads/data.json\""
             buildConfigField "String", "OAUTH_APP_NAME", "\"DroidconUK2014-2014\""
             buildConfigField "String", "OAUTH_API_KEY", "\""+droidconit15_android_oauth_api_key+"\""
             buildConfigField "String", "GCM_API_KEY", "\""+droidconit15_gcm_api_key+"\""

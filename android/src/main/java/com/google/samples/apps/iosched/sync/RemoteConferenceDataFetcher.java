@@ -80,24 +80,27 @@ public class RemoteConferenceDataFetcher extends ServerDataFetcher {
      * @throws IOException if an error occurred during download.
      */
     public String[] fetchConferenceDataIfNewer(String refTimestamp) throws IOException {
-        if (TextUtils.isEmpty(mManifestUrl)) {
-            LOGW(TAG, "Manifest URL is empty (remote sync disabled!).");
-            return null;
-        }
+        //if (TextUtils.isEmpty(mManifestUrl)) {
+        //    LOGW(TAG, "Manifest URL is empty (remote sync disabled!).");
+        //    return null;
+        //}
+        //
+        //String manifestData = fetchDataIfNewer(TAG, mManifestUrl, refTimestamp);
+        //if(manifestData == null) {
+        //    LOGD(TAG, "No new data is available");
+        //    return null;
+        //}
+        //
+        //if (TextUtils.isEmpty(manifestData)) {
+        //    LOGE(TAG, "Request for manifest returned empty data.");
+        //    throw new IOException("Error fetching conference data manifest: no data.");
+        //}
+        //LOGD(TAG, "Manifest "+mManifestUrl+" read, contents: " + manifestData);
+        //mBytesDownloaded += manifestData.getBytes().length;
+        //return processManifest(manifestData);
 
-        String manifestData = fetchDataIfNewer(TAG, mManifestUrl, refTimestamp);
-        if(manifestData == null) {
-            LOGD(TAG, "No new data is available");
-            return null;
-        }
-
-        if (TextUtils.isEmpty(manifestData)) {
-            LOGE(TAG, "Request for manifest returned empty data.");
-            throw new IOException("Error fetching conference data manifest: no data.");
-        }
-        LOGD(TAG, "Manifest "+mManifestUrl+" read, contents: " + manifestData);
-        mBytesDownloaded += manifestData.getBytes().length;
-        return processManifest(manifestData);
+        LOGD(TAG, "Not using Manifest at all! See RemoteConferenceDataFetcher.fetchConferenceDataIfNewer(String).");
+        return new String[] { fetchFile(getManifestUrl()) };
     }
 
     /**
@@ -147,21 +150,23 @@ public class RemoteConferenceDataFetcher extends ServerDataFetcher {
 
         LOGD(TAG, "Attempting to fetch: " + sanitizeUrl(url));
 
-        // Check if we have it in our cache first
         String body;
-        try {
-            body = loadFromCache(url);
-            if (!TextUtils.isEmpty(body)) {
-                // cache hit
-                mBytesReadFromCache += body.getBytes().length;
-                mCacheFilesToKeep.add(getCacheKey(url));
-                return body;
-            }
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            LOGE(TAG, "IOException getting file from cache.");
-            // proceed anyway to attempt to download it from the network
-        }
+
+        LOGD(TAG, "Caching is disabled! See RemoteConferenceDataFetcher.fetchFile(String).");
+        //// Check if we have it in our cache first
+        //try {
+        //    body = loadFromCache(url);
+        //    if (!TextUtils.isEmpty(body)) {
+        //        // cache hit
+        //        mBytesReadFromCache += body.getBytes().length;
+        //        mCacheFilesToKeep.add(getCacheKey(url));
+        //        return body;
+        //    }
+        //} catch (IOException ex) {
+        //    ex.printStackTrace();
+        //    LOGE(TAG, "IOException getting file from cache.");
+        //    // proceed anyway to attempt to download it from the network
+        //}
 
         // We don't have the file on cache, so download it
         LOGD(TAG, "Cache miss. Downloading from network: " + sanitizeUrl(url));
@@ -181,8 +186,8 @@ public class RemoteConferenceDataFetcher extends ServerDataFetcher {
             }
             LOGD(TAG, "Successfully downloaded from network: " + sanitizeUrl(url));
             mBytesDownloaded += body.getBytes().length;
-            writeToCache(url, body);
-            mCacheFilesToKeep.add(getCacheKey(url));
+            //writeToCache(url, body);
+            //mCacheFilesToKeep.add(getCacheKey(url));
             return body;
         } else {
             LOGE(TAG, "Failed to fetch from network: " + sanitizeUrl(url));
