@@ -32,16 +32,16 @@
         android:title="@string/description_configure_wifi"
         iosched:showAsAction="never" />
 
-    <item android:id="@+id/menu_i_o_hunt"
-          android:orderInCategory="99"
-          android:title="@string/description_i_o_hunt"
-        iosched:showAsAction="never" />
+    <!--<item android:id="@+id/menu_i_o_hunt"-->
+          <!--android:orderInCategory="99"-->
+          <!--android:title="@string/description_i_o_hunt"-->
+        <!--iosched:showAsAction="never" />-->
 
-    <item android:id="@+id/menu_io_extended"
-        android:orderInCategory="99"
-        android:title="@string/description_i_o_extended"
-        android:visible="false"
-        iosched:showAsAction="never" />
+    <!--<item android:id="@+id/menu_io_extended"-->
+        <!--android:orderInCategory="99"-->
+        <!--android:title="@string/description_i_o_extended"-->
+        <!--android:visible="false"-->
+        <!--iosched:showAsAction="never" />-->
 
     <item android:id="@+id/menu_map"
         android:orderInCategory="100"
@@ -55,9 +55,9 @@
         android:visible="false"
         iosched:showAsAction="never" />
 
-    <item android:id="@+id/menu_about"
-        android:orderInCategory="99"
-        android:title="@string/description_about"
-        iosched:showAsAction="never" />
+    <!--<item android:id="@+id/menu_about"-->
+        <!--android:orderInCategory="99"-->
+        <!--android:title="@string/description_about"-->
+        <!--iosched:showAsAction="never" />-->
 
 </menu>

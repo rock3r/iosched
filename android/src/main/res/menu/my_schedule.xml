@@ -32,16 +32,16 @@
         android:orderInCategory="98"
         iosched:showAsAction="never" />
 
-    <item android:id="@+id/menu_i_o_hunt"
-          android:title="@string/description_i_o_hunt"
-          android:orderInCategory="99"
-        iosched:showAsAction="never" />
+    <!--<item android:id="@+id/menu_i_o_hunt"-->
+          <!--android:title="@string/description_i_o_hunt"-->
+          <!--android:orderInCategory="99"-->
+        <!--iosched:showAsAction="never" />-->
 
-    <item android:id="@+id/menu_io_extended"
-        android:visible="false"
-        android:title="@string/description_i_o_extended"
-        android:orderInCategory="99"
-        iosched:showAsAction="never" />
+    <!--<item android:id="@+id/menu_io_extended"-->
+        <!--android:visible="false"-->
+        <!--android:title="@string/description_i_o_extended"-->
+        <!--android:orderInCategory="99"-->
+        <!--iosched:showAsAction="never" />-->
 
     <item android:id="@+id/menu_map"
         android:visible="false"
@@ -55,8 +55,8 @@
         android:orderInCategory="101"
         iosched:showAsAction="never" />
 
-    <item android:id="@+id/menu_about"
-        android:title="@string/description_about"
-        android:orderInCategory="99"
-        iosched:showAsAction="never" />
+    <!--<item android:id="@+id/menu_about"-->
+        <!--android:title="@string/description_about"-->
+        <!--android:orderInCategory="99"-->
+        <!--iosched:showAsAction="never" />-->
 </menu>
