@@ -49,7 +49,7 @@ public final class JsonTransformer {
     private static final int NUMBER_OF_ROOMS = 8;
 
     static {
-        EXCLUDE_SESSIONS = new HashSet<>();
+        EXCLUDE_SESSIONS = new HashSet<>(4);
         EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/welcome-2/");
         EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/barcamp-organization-2/");
         EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/droidcon-party/");
