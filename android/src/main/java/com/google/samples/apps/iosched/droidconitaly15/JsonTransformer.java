@@ -46,7 +46,6 @@ public final class JsonTransformer {
     private static final Set<String> EXCLUDE_SESSIONS;
     private static final HashMap<String, String> ROOMS_TO_COLORS;
     private static final String DEFAULT_ROOM_COLOR;
-    private static final int NUMBER_OF_ROOMS = 8;
 
     static {
         EXCLUDE_SESSIONS = new HashSet<>(4);
@@ -55,6 +54,7 @@ public final class JsonTransformer {
         EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/droidcon-party/");
         EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/chiusura/");
 
+        final int NUMBER_OF_ROOMS = 8;
         ROOMS_TO_COLORS = new HashMap<>(NUMBER_OF_ROOMS);
         ROOMS_TO_COLORS.put("sala 500", "#8e24aa");
         ROOMS_TO_COLORS.put("sala lisbona", "#2a56c6");
@@ -271,7 +271,7 @@ public final class JsonTransformer {
             return DEFAULT_ROOM_COLOR;
         }
 
-        String roomColor = ROOMS_TO_COLORS.get(roomName.toLowerCase());
+        String roomColor = ROOMS_TO_COLORS.get(roomName.trim().toLowerCase());
 
         if (roomColor == null) {
             roomColor = DEFAULT_ROOM_COLOR;
