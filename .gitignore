@@ -42,3 +42,5 @@ local.properties
 # Sandbox stuff
 _sandbox
 
+# Signing
+signing.properties

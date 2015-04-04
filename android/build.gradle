@@ -43,12 +43,7 @@ android {
             keyAlias "androiddebugkey"
             keyPassword "android"
         }
-        release {
-            storeFile file("../android/debug.keystore")
-            storePassword "android"
-            keyAlias "androiddebugkey"
-            keyPassword "android"
-        }
+        release
     }
 
     buildTypes {
@@ -58,8 +53,8 @@ android {
             signingConfig signingConfigs.debug
         }
         release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), file('proguard-project.txt')
+            minifyEnabled false
+            multiDexEnabled true
             signingConfig signingConfigs.release
         }
     }
@@ -217,8 +212,8 @@ android {
             buildConfigField "String", "FEEDBACK_SURVEY_ID", "\""+droidconit15_feedback_survey_id+"\""
             buildConfigField "String", "FEEDBACK_URL", "\""+droidconit15_feedback_url+"\""
             buildConfigField "String", "UNIQUE_CONTENT_IDENTIFIER", "\""+uniqueContentIdentifier+"\""
-            buildConfigField "String", "WIFI_SSID", "\""+ droidconit15_wifi_ssid +"\""
-            buildConfigField "String", "WIFI_PASSPHRASE", "\"" + droidconit15_wifi_password + "\""
+            buildConfigField "String", "WIFI_SSID", "\"droiconit\""
+            buildConfigField "String", "WIFI_PASSPHRASE", "\"synesthesia\""
 
             buildConfigField "Class<? extends android.app.Fragment>", "SOCIAL_FRAGMENT_CLASS",
                     "com.google.samples.apps.iosched.ui.TwitterSocialFragment.class"
@@ -236,6 +231,29 @@ android {
 
         }
     }
+}
+
+// https://gist.github.com/Takhion/8245967
+def Properties props = new Properties()
+def propFile = file(new File('./signing.properties'))
+if (propFile.canRead()) {
+    props.load(new FileInputStream(propFile))
+    if (props != null &&
+            props.containsKey('STORE_FILE') &&
+            props.containsKey('STORE_PASSWORD') &&
+            props.containsKey('KEY_ALIAS') &&
+            props.containsKey('KEY_PASSWORD')) {
+        android.signingConfigs.release.storeFile = file(props['STORE_FILE'])
+        android.signingConfigs.release.storePassword = props['STORE_PASSWORD']
+        android.signingConfigs.release.keyAlias = props['KEY_ALIAS']
+        android.signingConfigs.release.keyPassword = props['KEY_PASSWORD']
+    } else {
+        println 'signing.properties found but some entries are missing'
+        android.buildTypes.release.signingConfig = null
+    }
+} else {
+    println 'signing.properties not found'
+    android.buildTypes.release.signingConfig = null
 }
 
 dependencies {
