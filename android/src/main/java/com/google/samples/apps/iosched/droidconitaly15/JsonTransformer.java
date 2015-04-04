@@ -58,8 +58,7 @@ public final class JsonTransformer {
         SPECIAL_SESSIONS.add("http://it.droidcon.com/2015/sessions/barcamp-organization-2/");
         SPECIAL_SESSIONS.add("http://it.droidcon.com/2015/sessions/droidcon-party/");
 
-        final int NUMBER_OF_ROOMS = 8;
-        ROOMS_TO_COLORS = new HashMap<>(NUMBER_OF_ROOMS);
+        ROOMS_TO_COLORS = new HashMap<>(8);
         ROOMS_TO_COLORS.put("sala 500", "#8e24aa");
         ROOMS_TO_COLORS.put("sala lisbona", "#2a56c6");
         ROOMS_TO_COLORS.put("sala londra", "#558b2f");
