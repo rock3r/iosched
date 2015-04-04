@@ -43,16 +43,20 @@ import static com.google.samples.apps.iosched.sync.ConferenceDataHandler.DATA_KE
 
 public final class JsonTransformer {
 
-    private static final Set<String> EXCLUDE_SESSIONS;
+    private static final Set<String> BLOCK_SESSIONS;
+    private static final Set<String> SPECIAL_SESSIONS;
     private static final HashMap<String, String> ROOMS_TO_COLORS;
     private static final String DEFAULT_ROOM_COLOR;
 
     static {
-        EXCLUDE_SESSIONS = new HashSet<>(4);
-        EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/welcome-2/");
-        EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/barcamp-organization-2/");
-        EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/droidcon-party/");
-        EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/chiusura/");
+        BLOCK_SESSIONS = new HashSet<>(2);
+        BLOCK_SESSIONS.add("http://it.droidcon.com/2015/sessions/welcome-2/");
+        BLOCK_SESSIONS.add("http://it.droidcon.com/2015/sessions/chiusura/");
+
+        SPECIAL_SESSIONS = new HashSet<>(3);
+        SPECIAL_SESSIONS.add("http://it.droidcon.com/2015/sessions/keynote-2/");
+        SPECIAL_SESSIONS.add("http://it.droidcon.com/2015/sessions/barcamp-organization-2/");
+        SPECIAL_SESSIONS.add("http://it.droidcon.com/2015/sessions/droidcon-party/");
 
         final int NUMBER_OF_ROOMS = 8;
         ROOMS_TO_COLORS = new HashMap<>(NUMBER_OF_ROOMS);
@@ -183,9 +187,20 @@ public final class JsonTransformer {
             @NonNull List<Session> sessions)
             throws ParseException {
 
-        if (EXCLUDE_SESSIONS.contains(di15Session.url)) return;
+        // *** BLOCKS ***
 
-        final boolean isKeynote = "keynote".equals(di15Session.post_title.trim().toLowerCase());
+        final String roomName = escapeHtml(di15Session.location);
+        if (BLOCK_SESSIONS.contains(di15Session.url)) {
+            addBlock(di15Session.post_title,
+                    roomName, di15Session.date,
+                    di15Session.time,
+                    di15Session.end_time,
+                    false,
+                    DATE_PARSER.get(),
+                    DATE_FORMATTER_BLOCKS.get(),
+                    blocks);
+            return;
+        }
 
         // *** SPEAKERS ***
 
@@ -207,7 +222,6 @@ public final class JsonTransformer {
 
         // *** ROOMS ***
 
-        final String roomName = escapeHtml(di15Session.location);
         if (roomName != null) {
             if (!rooms.containsKey(roomName)) {
                 final Room room = new Room();
@@ -221,7 +235,9 @@ public final class JsonTransformer {
 
         final List<String> di15Tags =
                 di15Session.track != null ? di15Session.track : new ArrayList<String>();
-        if (isKeynote) di15Tags.add(Config.Tags.SPECIAL_KEYNOTE);
+        if (SPECIAL_SESSIONS.contains(di15Session.url)) {
+            di15Tags.add(Config.Tags.SPECIAL_KEYNOTE);
+        }
         for (String di15tag : di15Tags) {
             if (!tags.containsKey(di15tag)) {
                 final Tag tag = new Tag();
@@ -289,11 +305,6 @@ public final class JsonTransformer {
 
         day = "9 April 2015";
 
-        addBlock("Welcome", "Sala 500", day, "09:15", "09:50", false,
-                dateParser, dateFormatterBlocks, blocks);
-        addBlock("Barcamp organization", "Sala 500", day, "10:30", "10:50", false,
-                dateParser, dateFormatterBlocks, blocks);
-
         addBlock("", "", day, "11:00", "12:00", true,
                 dateParser, dateFormatterBlocks, blocks);
         addBlock("", "", day, "12:00", "12:50", true,
@@ -313,9 +324,6 @@ public final class JsonTransformer {
         addBlock("", "", day, "17:10", "18:00", true,
                 dateParser, dateFormatterBlocks, blocks);
         addBlock("", "", day, "18:00", "19:00", true,
-                dateParser, dateFormatterBlocks, blocks);
-
-        addBlock("Droidcon Party!", "Caffè del Progresso", day, "19:00", "23:00", false,
                 dateParser, dateFormatterBlocks, blocks);
 
         day = "10 April 2015";
@@ -343,9 +351,6 @@ public final class JsonTransformer {
         addBlock("", "", day, "16:40", "17:30", true,
                 dateParser, dateFormatterBlocks, blocks);
         addBlock("", "", day, "17:30", "18:20", true,
-                dateParser, dateFormatterBlocks, blocks);
-
-        addBlock("Closing ceremony", "Sala Londra", day, "18:20", "18:40", false,
                 dateParser, dateFormatterBlocks, blocks);
     }
 
