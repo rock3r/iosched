@@ -388,8 +388,7 @@ public final class JsonTransformer {
      * From html to plain text, yo.
      */
     @Nullable
-    private static String escapeHtml(@Nullable String html)
-    {
+    private static String escapeHtml(@Nullable String html) {
         return html == null ? null : Html.fromHtml(html).toString(); // THE HORROR
     }
 }
