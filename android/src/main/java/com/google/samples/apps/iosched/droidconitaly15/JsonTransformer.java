@@ -192,7 +192,8 @@ public final class JsonTransformer {
         final String roomName = escapeHtml(di15Session.location);
         if (BLOCK_SESSIONS.contains(di15Session.url)) {
             addBlock(di15Session.post_title,
-                    roomName, di15Session.date,
+                    roomName,
+                    di15Session.date,
                     di15Session.time,
                     di15Session.end_time,
                     false,
