@@ -188,8 +188,10 @@ public final class JsonTransformer {
 
         // *** BLOCKS ***
 
+        final String sessionUrl =
+                di15Session.url == null ? null : di15Session.url.toLowerCase(Locale.US);
         final String roomName = escapeHtml(di15Session.location);
-        if (BLOCK_SESSIONS.contains(di15Session.url)) {
+        if (sessionUrl != null && BLOCK_SESSIONS.contains(sessionUrl)) {
             addBlock(di15Session.post_title,
                     roomName,
                     di15Session.date,
@@ -235,7 +237,7 @@ public final class JsonTransformer {
 
         final List<String> di15Tags =
                 di15Session.track != null ? di15Session.track : new ArrayList<String>();
-        if (SPECIAL_SESSIONS.contains(di15Session.url)) {
+        if (sessionUrl != null && SPECIAL_SESSIONS.contains(sessionUrl)) {
             di15Tags.add(Config.Tags.SPECIAL_KEYNOTE);
         }
         for (String di15tag : di15Tags) {
@@ -250,10 +252,10 @@ public final class JsonTransformer {
         // *** SESSIONS ***
 
         final Session session = new Session();
-        session.id = di15Session.url;
+        session.id = sessionUrl;
         session.title = escapeHtml(di15Session.post_title);
         session.description = escapeHtml(di15Session.content);
-        session.url = di15Session.url;
+        session.url = sessionUrl;
         session.room = roomName;
         session.color = getColorFrom(roomName);
         session.tags = di15Tags.toArray(new String[di15Tags.size()]);
