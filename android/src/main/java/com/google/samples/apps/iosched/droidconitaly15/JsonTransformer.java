@@ -44,6 +44,8 @@ import static com.google.samples.apps.iosched.sync.ConferenceDataHandler.DATA_KE
 public final class JsonTransformer {
 
     private static final Set<String> EXCLUDE_SESSIONS;
+    private static final HashMap<String, String> ROOMS_TO_COLORS;
+    private static final String DEFAULT_ROOM_COLOR;
 
     static {
         EXCLUDE_SESSIONS = new HashSet<>();
@@ -51,6 +53,17 @@ public final class JsonTransformer {
         EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/barcamp-organization-2/");
         EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/droidcon-party/");
         EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/chiusura/");
+
+        ROOMS_TO_COLORS = new HashMap<>();
+        ROOMS_TO_COLORS.put("Sala 500", "#8e24aa");
+        ROOMS_TO_COLORS.put("Sala Lisbona", "#2a56c6");
+        ROOMS_TO_COLORS.put("Sala Londra", "#558b2f");
+        ROOMS_TO_COLORS.put("Sala Madrid", "#607d8b");
+        ROOMS_TO_COLORS.put("Sala Parigi", "#0d904f");
+        ROOMS_TO_COLORS.put("Sala Instabul", "#3367d6");
+        ROOMS_TO_COLORS.put("Sala Copenaghen", "#0288d1");
+        ROOMS_TO_COLORS.put("Caffè del Progresso", "#00897b");
+        DEFAULT_ROOM_COLOR = "#3f51b5";
     }
 
     private static final ThreadLocal<DateFormat> DATE_PARSER = new ThreadLocal<DateFormat>() {
@@ -225,6 +238,7 @@ public final class JsonTransformer {
         session.description = escapeHtml(di15Session.content);
         session.url = di15Session.url;
         session.room = roomName;
+        session.color = getColorFrom(roomName);
         session.tags = di15Tags.toArray(new String[di15Tags.size()]);
 
         // speakers
@@ -246,6 +260,19 @@ public final class JsonTransformer {
                         dateParser, dateFormatterSessions);
 
         sessions.add(session);
+    }
+
+    /**
+     * MOAR COLORZ PLS!
+     */
+    private static String getColorFrom(String roomName) {
+        String roomColor = DEFAULT_ROOM_COLOR;
+
+        if (ROOMS_TO_COLORS.containsKey(roomName)) {
+            roomColor = ROOMS_TO_COLORS.get(roomName);
+        }
+
+        return roomColor;
     }
 
     private static void addBlocksManually(@NonNull Collection<Block> blocks)
