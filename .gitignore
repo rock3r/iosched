@@ -42,3 +42,6 @@ local.properties
 # Sandbox stuff
 _sandbox
 
+
+signing.properties
+droidconit.jks
