@@ -271,7 +271,7 @@ public final class JsonTransformer {
             return DEFAULT_ROOM_COLOR;
         }
 
-        String roomColor = ROOMS_TO_COLORS.get(roomName.trim().toLowerCase());
+        String roomColor = ROOMS_TO_COLORS.get(roomName.trim().toLowerCase(Locale.US));
 
         if (roomColor == null) {
             roomColor = DEFAULT_ROOM_COLOR;
