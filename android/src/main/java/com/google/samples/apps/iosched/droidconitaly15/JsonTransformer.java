@@ -48,21 +48,22 @@ public final class JsonTransformer {
     private static final String DEFAULT_ROOM_COLOR;
 
     static {
-        EXCLUDE_SESSIONS = new HashSet<>();
+        EXCLUDE_SESSIONS = new HashSet<>(4);
         EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/welcome-2/");
         EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/barcamp-organization-2/");
         EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/droidcon-party/");
         EXCLUDE_SESSIONS.add("http://it.droidcon.com/2015/sessions/chiusura/");
 
-        ROOMS_TO_COLORS = new HashMap<>();
-        ROOMS_TO_COLORS.put("Sala 500", "#8e24aa");
-        ROOMS_TO_COLORS.put("Sala Lisbona", "#2a56c6");
-        ROOMS_TO_COLORS.put("Sala Londra", "#558b2f");
-        ROOMS_TO_COLORS.put("Sala Madrid", "#607d8b");
-        ROOMS_TO_COLORS.put("Sala Parigi", "#0d904f");
-        ROOMS_TO_COLORS.put("Sala Instabul", "#3367d6");
-        ROOMS_TO_COLORS.put("Sala Copenaghen", "#0288d1");
-        ROOMS_TO_COLORS.put("Caffè del Progresso", "#00897b");
+        final int NUMBER_OF_ROOMS = 8;
+        ROOMS_TO_COLORS = new HashMap<>(NUMBER_OF_ROOMS);
+        ROOMS_TO_COLORS.put("sala 500", "#8e24aa");
+        ROOMS_TO_COLORS.put("sala lisbona", "#2a56c6");
+        ROOMS_TO_COLORS.put("sala londra", "#558b2f");
+        ROOMS_TO_COLORS.put("sala madrid", "#607d8b");
+        ROOMS_TO_COLORS.put("sala parigi", "#0d904f");
+        ROOMS_TO_COLORS.put("sala instabul", "#3367d6");
+        ROOMS_TO_COLORS.put("sala copenaghen", "#0288d1");
+        ROOMS_TO_COLORS.put("caffè del progresso", "#00897b");
         DEFAULT_ROOM_COLOR = "#3f51b5";
     }
 
@@ -266,10 +267,14 @@ public final class JsonTransformer {
      * MOAR COLORZ PLS!
      */
     private static String getColorFrom(String roomName) {
-        String roomColor = DEFAULT_ROOM_COLOR;
+        if (roomName == null) {
+            return DEFAULT_ROOM_COLOR;
+        }
 
-        if (ROOMS_TO_COLORS.containsKey(roomName)) {
-            roomColor = ROOMS_TO_COLORS.get(roomName);
+        String roomColor = ROOMS_TO_COLORS.get(roomName.trim().toLowerCase());
+
+        if (roomColor == null) {
+            roomColor = DEFAULT_ROOM_COLOR;
         }
 
         return roomColor;
